@@ -379,15 +379,20 @@ export class LegalQaService implements OnModuleInit {
         if (rowHas(/penipuan.*online|jual beli.*online|cara penyidik.*penipuan|tertipu/)) boost += 0.85;
         if (rowHas(/vcs|kencan online|mobil.*luar negeri/) && !has(/vcs|kencan|mobil|luar negeri/)) boost -= 0.5;
       }
-      if (has(/titipan|tidak dikembalikan/) && rowHas(/titipan|tidak.*mengembalikan|pinjam pakai.*penggelapan|penggelapan|barang.*dikembalikan/)) boost += 0.95;
+      if (has(/titipan|tidak dikembalikan|dipinjam tidak dikembalikan/) || (has(/pinjam/) && has(/tidak.*kembali|tidak.*dikembalikan/))) {
+        if (rowHas(/pinjam pakai.*penggelapan|pelanggaran perjanjian pinjam pakai|penggelapan/)) boost += 1.15;
+        if (rowHas(/barang titipan|dititipkan wajib mengganti|penerima titipan/)) boost += 0.95;
+        if (rowHas(/barang curian dikembalikan/) && !has(/curian/)) boost -= 0.55;
+      }
       if (has(/motor|kendaraan bermotor/) && has(/curi|dicuri|pencurian/)) {
         if (rowHas(/motor|kendaraan bermotor|pencurian.*motor|sepeda motor/)) boost += 1.05;
         if (has(/tetangga/) && rowHas(/air pam|air dicuri/) && !rowHas(/motor|kendaraan/)) boost -= 0.8;
       }
       if (has(/pelecehan seksual|tindak pidana seksual|kekerasan seksual/)) {
         if (rowHas(/pelecehan seksual|tindak pidana kekerasan seksual|kekerasan seksual|uu tpks/)) boost += 1.15;
-        if (has(/kerja|tempat kerja/) && rowHas(/kerja|tempat kerja|perusahaan|karyawan|atasan/)) boost += 0.4;
-        if (has(/kerja|tempat kerja/) && rowHas(/spill.*identitas|medsos|media sosial/) && !rowHas(/kerja|tempat kerja/)) boost -= 0.2;
+        if (has(/kerja|tempat kerja/) && rowHas(/kerja|tempat kerja|perusahaan|karyawan|atasan/)) boost += 0.45;
+        if (has(/kerja|tempat kerja/) && rowHas(/spill.*identitas|medsos|media sosial/) && !rowHas(/kerja|tempat kerja/)) boost -= 0.35;
+        if (has(/kerja|tempat kerja/) && rowHas(/kereta api/) && !rowHas(/kerja|tempat kerja/)) boost -= 0.25;
       }
 
       // Bonus kategori prediksi (soft, bukan hard filter) + penalti mismatch halus.
