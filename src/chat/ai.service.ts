@@ -65,7 +65,7 @@ export class AiService {
       return { text: qa.reply, qa };
     }
 
-    // 2) Dataset gabungan (CSV) tersedia -> jawaban diambil dari dataset.
+    // 2) Dataset gabungan tersedia (CSV gabungan atau gabungan-dataset.json >= 50 entri) -> jawaban dari dataset.
     if (this.legalQa.hasPrimaryDataset) {
       if (this.mode === 'ai') {
         try {
@@ -78,7 +78,7 @@ export class AiService {
       return { text: qa.reply, qa };
     }
 
-    // 3) Fallback: dataset contoh (JSON) bila file CSV belum dipasang.
+    // 3) Fallback: dataset contoh kecil bila file gabungan belum dipasang.
     const context = this.dataset.buildContext(lastUser);
     if (!clean.length) {
       return {
@@ -196,7 +196,7 @@ export class AiService {
 
   private mockReply(context: string, extra?: string) {
     const note =
-      '\n\n(Mode contoh aktif karena dataset gabungan belum terpasang di server. ' +
+      '\n\n(Mode contoh aktif karena dataset gabungan utama belum terdeteksi/terpasang; menggunakan dataset contoh. ' +
       'Informasi ini bersifat umum, bukan nasihat hukum resmi.)';
 
     if (context) {

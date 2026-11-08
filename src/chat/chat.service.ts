@@ -57,6 +57,7 @@ export class ChatService {
         similarity: Number(qa.score.toFixed(3)),
         link: qa.link,
         question: qa.question,
+        status: this.legalQa.getStatus(),
       },
     };
   }

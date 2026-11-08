@@ -145,7 +145,7 @@ export class LegalQaService implements OnModuleInit {
       try {
         this.qaRows = this.loadQaFile(qaFile);
         this.qaPath = qaFile;
-        this.primary = /\.csv$/i.test(qaFile);
+        this.primary = /\.csv$/i.test(qaFile) || /gabungan/i.test(qaFile) || this.qaRows.length >= 50;
         this.logger.log(
           `Dataset Legal QA dimuat: ${this.qaRows.length} baris dari ${qaFile}` +
             (this.primary ? ' (dataset gabungan aktif)' : ' (dataset contoh)'),
@@ -527,13 +527,13 @@ export class LegalQaService implements OnModuleInit {
       this.logger.warn(`CHAT_QA_DATASET_PATH tidak ditemukan: ${p}. Melanjutkan pencarian otomatis di folder data/.`);
     }
     const files = this.scanDataDir();
-    // CSV (dataset gabungan) selalu didahulukan daripada JSON (dataset contoh).
+    // CSV (dataset gabungan) selalu didahulukan daripada JSON contoh kecil.
     const csvFiles = files.filter((p) => /\.csv$/i.test(p));
     const jsonFiles = files.filter((p) => /\.json$/i.test(p));
 
     for (const p of csvFiles) {
       try {
-        const rows = this.parseCsv(readFileSync(p, 'utf8').replace(/^﻿/, ''));
+        const rows = this.parseCsv(readFileSync(p, 'utf8').replace(/^\uFEFF/, ''));
         if (!rows.length) continue;
         const header = rows[0].map((h) => h.trim().toLowerCase());
         const hasQuestion = header.some((h) => h === 'question' || h === 'pertanyaan' || h === 'q');
@@ -544,21 +544,22 @@ export class LegalQaService implements OnModuleInit {
       }
     }
 
+    // JSON gabungan besar (gabungan-dataset.json / >50 entri) didahulukan daripada dataset contoh.
+    let fallback: string | null = null;
     for (const p of jsonFiles) {
       try {
-        const raw = JSON.parse(readFileSync(p, 'utf8').replace(/^﻿/, ''));
+        const raw = JSON.parse(readFileSync(p, 'utf8').replace(/^\uFEFF/, ''));
         const arr = Array.isArray(raw) ? raw : (raw as any)?.items ?? (raw as any)?.data;
-        if (
-          Array.isArray(arr) &&
-          arr.some((x: any) => x && (x.question ?? x.Question ?? x.answer ?? x.Answer))
-        ) {
-          return p;
-        }
+        if (!Array.isArray(arr) || !arr.some((x: any) => x && (x.question ?? x.Question ?? x.answer ?? x.Answer))) continue;
+        const name = p.toLowerCase();
+        const primary = name.includes('gabungan') || arr.length >= 50 || String((raw as any)?.meta?.source ?? '').includes('gabungan');
+        if (primary) return p;
+        if (!fallback) fallback = p;
       } catch {
         /* abaikan file json yang tidak valid */
       }
     }
-    return null;
+    return fallback;
   }
 
   private findClassificationFile(): string | null {

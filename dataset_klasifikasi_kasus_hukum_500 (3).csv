@@ -1,0 +1,501 @@
+﻿index,teks_laporan,kategori
+1,Aku didorong sampai jatuh waktu bertengkar dengan tetangga.,Penganiayaan
+2,"Gue ditawarin investasi sama seseorang, katanya untungnya gede banget, tapi uang gue malah nggak balik, sampai sekarang masalahnya masih berlanjut.",Penipuan dan Penggelapan
+3,Saya kehilangan kamera saat berwisata dan menduga barang tersebut diambil orang.,Pencurian
+4,Aku malu karena ada orang yang menyebarkan kabar bohong tentang saya ke lingkungan sekitar.,Pencemaran Nama Baik
+5,"Saya membayar biaya pendaftaran pekerjaan, tetapi setelah uang dikirim, pihak tersebut tidak bisa dihubungi, tapi sampai sekarang belum ada penyelesaian.",Penipuan dan Penggelapan
+6,"Aku dituduh berbohong oleh seseorang di depan banyak teman, padahal aku punya bukti sebaliknya.",Pencemaran Nama Baik
+7,"Aku kehilangan jaket di ruang kelas dan teman melihat seseorang membawanya pergi, aku benar-benar berharap masalah ini segera selesai.",Pencurian
+8,"Kemarin saya menyewa kamera melalui akun media sosial, tetapi setelah membayar, barangnya tidak diberikan, gue takut masalah ini makin besar.",Penipuan dan Penggelapan
+9,Seseorang mengirim pesan ke teman-teman saya dan menyebut saya sebagai penipu.,Pencemaran Nama Baik
+10,Seseorang menyebarkan tuduhan tidak benar tentang saya sehingga hubungan saya dengan teman-teman terganggu.,Pencemaran Nama Baik
+11,"Aku pulang ke rumah dan mendapati sepeda motor yang tadi diparkir sudah tidak ada, tetapi hasilnya tetap tidak sesuai harapan.",Pencurian
+12,"Seseorang menyebarkan informasi palsu tentang pekerjaan saya kepada banyak orang, saya berharap ada solusi untuk masalah ini.",Pencemaran Nama Baik
+13,"Aku beli baju lewat toko online, udah bayar tapi sampai sekarang paketnya nggak dikirim.",Penipuan dan Penggelapan
+14,"Ada orang yang menyebarkan rumor tentang saya lewat status WhatsApp, aku ingin mendapatkan penjelasan yang jelas.",Pencemaran Nama Baik
+15,"Aku malu karena ada orang yang menyebarkan kabar bohong tentang saya ke lingkungan sekitar, dan aku merasa sangat dirugikan.",Pencemaran Nama Baik
+16,"Gue merasa nama baik gue dicemarkan setelah tuduhan palsu itu tersebar, sampai gue stres memikirkan masalah ini.",Pencemaran Nama Baik
+17,"Saya menyerahkan uang untuk keperluan bersama, tetapi uang tersebut digunakan untuk kepentingan pribadi.",Penipuan dan Penggelapan
+18,"Saya ditinju oleh seseorang setelah terjadi cekcok di tempat parkir, aku ingin mendapatkan penjelasan yang jelas.",Penganiayaan
+19,Kemarin sepeda motor tetangga hilang ketika diparkir di depan rumah.,Pencurian
+20,"Gue ikut bisnis yang dijanjikan keuntungan besar, tetapi uang yang disetorkan tidak jelas penggunaannya, tapi sampai sekarang tetap nggak ada hasil.",Penipuan dan Penggelapan
+21,"Aku pulang kerja dan mendapati helm yang biasa kupakai sudah hilang dari motor, sampai gue stres memikirkan masalah ini.",Pencurian
+22,"Gue dipukul tetangga setelah terjadi cekcok di depan rumah, padahal gue sudah berusaha menyelesaikannya.",Penganiayaan
+23,"Gue ninggalin jaket di kursi kafe, pas dicari lagi ternyata udah hilang.",Pencurian
+24,"Kemarin saya menyewa kamera melalui akun media sosial, tetapi setelah membayar, barangnya tidak diberikan.",Penipuan dan Penggelapan
+25,"Kemarin ada orang yang menyerang saya tanpa alasan yang saya pahami, tapi orangnya malah susah dihubungi.",Penganiayaan
+26,"Gue baru tahu ada postingan yang isinya menjelek-jelekkan gue di internet, aku benar-benar kecewa dengan kejadian ini.",Pencemaran Nama Baik
+27,"Gue diserang orang di jalan dan sempat jatuh karena didorong, aku belum tahu harus meminta bantuan ke siapa.",Penganiayaan
+28,"Aku dituduh berbuat curang di grup kelas, padahal tuduhan itu tidak benar.",Pencemaran Nama Baik
+29,"Adik saya mengadu bahwa ia ditampar oleh teman sekelasnya, dan gue pengin tahu apa yang harus dilakukan.",Penganiayaan
+30,Saya dituduh melakukan kecurangan di tempat kerja tanpa penjelasan yang jelas.,Pencemaran Nama Baik
+31,"Teman saya dikeroyok orang tidak dikenal ketika sedang pulang dari tempat kerja, tapi orang tersebut malah menghindar.",Penganiayaan
+32,"Saya transfer uang untuk membeli motor bekas, tetapi penjualnya menghilang setelah menerima pembayaran, dan aku merasa sangat dirugikan.",Penipuan dan Penggelapan
+33,Ada orang nyebarin gosip bohong tentang saya di media sosial.,Pencemaran Nama Baik
+34,"Aku tinggalin helm di motor sebentar, balik-balik helmnya udah nggak ada, dan aku merasa dirugikan.",Pencurian
+35,"Aku lagi di kelas, pas istirahat dompet yang ada di tas ternyata hilang, sampai sekarang masalahnya masih berlanjut.",Pencurian
+36,Aku dipukul sama orang yang sebelumnya mengancam akan menyerang saya.,Penganiayaan
+37,"Gue lagi jalan pulang, tiba-tiba ada orang mukul gue sampai jatuh, tapi orangnya malah susah dihubungi.",Penganiayaan
+38,"Saya merasa reputasi saya rusak setelah muncul unggahan berisi tuduhan yang belum terbukti, aku ingin mendapatkan arahan lebih lanjut.",Pencemaran Nama Baik
+39,"Aku kehilangan uang di dalam tas setelah tas itu ditinggal sebentar di ruang kelas, saya ingin mencari jalan keluar dari masalah ini.",Pencurian
+40,"Aku transfer uang ke rekening yang diberikan penjual, tapi setelah itu semua pesan gue cuma dibaca, saya belum tahu harus meminta bantuan ke siapa.",Penipuan dan Penggelapan
+41,"Saya mengetahui seseorang menceritakan hal yang tidak benar tentang saya kepada rekan kerja, saya takut masalah ini makin besar.",Pencemaran Nama Baik
+42,"Gue beli barang murah dari akun yang kelihatannya terpercaya, setelah transfer malah nggak ada kabar.",Penipuan dan Penggelapan
+43,"Aku didorong dan dipukul ketika sedang berdebat dengan seseorang, sampai sekarang belum ada kejelasan.",Penganiayaan
+44,Aku ditendang saat mencoba memisahkan dua orang yang sedang berkelahi.,Penganiayaan
+45,Saya mengalami pemukulan oleh orang yang saya kenal ketika terjadi perselisihan.,Penganiayaan
+46,"Gue dituduh melakukan hal yang nggak pernah gue lakuin, terus kabarnya disebarin ke mana-mana.",Pencemaran Nama Baik
+47,"Gue beli sepatu dari toko online, resinya nggak jelas dan barangnya belum sampai padahal udah lama.",Penipuan dan Penggelapan
+48,"Aku dijanjikan bisa dapat barang dengan harga murah kalau transfer dulu, tapi setelah transfer orangnya hilang, tapi sampai sekarang belum ada penyelesaian.",Penipuan dan Penggelapan
+49,"Gue udah bayar jasa renovasi rumah, tapi pekerjaannya ditinggal dan uang sisanya nggak jelas, aku berharap ada solusi untuk masalah ini.",Penipuan dan Penggelapan
+50,"Saya membayar biaya pendaftaran pekerjaan, tetapi setelah uang dikirim, pihak tersebut tidak bisa dihubungi, gue berharap ada solusi untuk masalah ini.",Penipuan dan Penggelapan
+51,"Aku pulang ke rumah dan mendapati sepeda motor yang tadi diparkir sudah tidak ada, gue udah mencoba menyelesaikannya baik-baik.",Pencurian
+52,"Seseorang menyebarkan informasi yang tidak benar tentang saya melalui grup keluarga, saya cuma ingin masalah ini diselesaikan dengan baik.",Pencemaran Nama Baik
+53,"Seseorang mengambil helm saya dari motor yang diparkir di halaman kampus, aku benar-benar kecewa dengan kejadian ini.",Pencurian
+54,"Saya mengalami memar setelah seseorang memukul lengan saya dengan keras, saya merasa kejadian ini nggak adil.",Penganiayaan
+55,"Saya sudah membayar pesanan makanan dalam jumlah besar, tetapi pesanan tidak dikirim dan penjual menghilang, tapi sampai sekarang belum ada penyelesaian.",Penipuan dan Penggelapan
+56,"Gue ikut bisnis yang dijanjikan keuntungan besar, tetapi uang yang disetorkan tidak jelas penggunaannya.",Penipuan dan Penggelapan
+57,"Aku ditampar seseorang waktu kami sedang berdebat, dan gue pengin tahu apa yang harus dilakukan.",Penganiayaan
+58,"Adik saya mengadu bahwa ia ditampar oleh teman sekelasnya, dan aku ingin tahu apa yang harus dilakukan.",Penganiayaan
+59,"Sepeda saya yang diparkir di depan rumah dibawa orang tanpa izin, tapi hasilnya tetap nggak sesuai harapan.",Pencurian
+60,Tetangga saya dikeroyok beberapa orang sampai mengalami luka.,Penganiayaan
+61,"Ada orang yang menyebarkan cerita bohong tentang kehidupan pribadi saya, gue pengin tahu tindakan apa yang sebaiknya dilakukan.",Pencemaran Nama Baik
+62,"HP adik saya hilang saat dia sedang bermain di taman, aku khawatir kejadian ini terulang lagi.",Pencurian
+63,Beberapa alat kerja di bengkel saya hilang ketika bengkel sedang tutup.,Pencurian
+64,"Gue taruh tas di kursi warung, pas mau pulang tasnya udah hilang, gue berharap masalah ini bisa segera selesai.",Pencurian
+65,Saya mengetahui seseorang menceritakan hal yang tidak benar tentang saya kepada rekan kerja.,Pencemaran Nama Baik
+66,"Saya kehilangan HP saat berada di pasar dan tidak mengetahui siapa yang mengambilnya, saya cuma ingin masalah ini diselesaikan dengan baik.",Pencurian
+67,"Aku udah bayar pesanan dari minggu lalu, tapi penjualnya sekarang malah nggak bisa dihubungi.",Penipuan dan Penggelapan
+68,"Aku pesan kamera bekas, katanya masih bagus, tapi setelah dibayar penjual malah nggak mau mengirim barang.",Penipuan dan Penggelapan
+69,"Aku simpan uang di laci meja, tetapi saat mau dipakai uangnya sudah tidak ada.",Pencurian
+70,"Gue ditendang beberapa kali sama orang yang ngajak ribut di jalan, saya khawatir kejadian ini terulang lagi.",Penganiayaan
+71,Seseorang menulis unggahan yang menuduh saya melakukan penipuan tanpa menunjukkan bukti.,Pencemaran Nama Baik
+72,"Gue bayar orang buat beliin tiket perjalanan, ternyata tiketnya nggak pernah dipesan, dan gue pengin tahu apa yang harus dilakukan.",Penipuan dan Penggelapan
+73,"Aku lagi ngobrol sama teman, terus ada orang mengambil sandal yang kutaruh di depan pintu, tapi saya masih belum memahami apa yang harus dilakukan.",Pencurian
+74,Bapak saya didorong sampai jatuh oleh tetangga saat mereka bertengkar.,Penganiayaan
+75,"Saya sudah membayar pesanan makanan dalam jumlah besar, tetapi pesanan tidak dikirim dan penjual menghilang, tapi orangnya malah susah dihubungi.",Penipuan dan Penggelapan
+76,Aku ditampar orang di depan banyak orang saat sedang adu mulut.,Penganiayaan
+77,"Aku dituduh berbuat curang di grup kelas, padahal tuduhan itu tidak benar, semoga ada solusi yang tepat untuk masalah ini.",Pencemaran Nama Baik
+78,"Sepeda saya yang diparkir di depan rumah dibawa orang tanpa izin, dan saya merasa sangat dirugikan.",Pencurian
+79,"Gue dituduh melakukan hal yang nggak pernah gue lakuin, terus kabarnya disebarin ke mana-mana, gue udah mencoba mencari informasi sendiri.",Pencemaran Nama Baik
+80,"Kemarin sepeda motor tetangga hilang ketika diparkir di depan rumah, dan aku merasa dirugikan.",Pencurian
+81,"Aku dituduh merusak barang milik orang lain padahal aku tidak berada di lokasi saat kejadian, gue berharap masalah ini bisa segera selesai.",Pencemaran Nama Baik
+82,"Aku melihat teman gue dipukuli beberapa orang di depan warung, tapi gue bingung harus bagaimana.",Penganiayaan
+83,"Aku transfer uang buat pesanan, terus penjual bilang ada biaya tambahan terus sampai aku bingung, gue udah mencoba mencari informasi sendiri.",Penipuan dan Penggelapan
+84,"Gue ditawarin investasi sama seseorang, katanya untungnya gede banget, tapi uang gue malah nggak balik.",Penipuan dan Penggelapan
+85,"Aku dipukul sama orang yang sebelumnya mengancam akan menyerang saya, aku ingin memastikan tindakan apa yang sebaiknya dilakukan.",Penganiayaan
+86,"Saya menyewakan laptop kepada kenalan, tetapi setelah masa sewa habis laptop tersebut tidak dikembalikan, aku cuma ingin masalah ini diselesaikan dengan baik.",Penipuan dan Penggelapan
+87,Saya melihat seorang warga memukul tetangganya hingga terjatuh.,Penganiayaan
+88,Aku ditampar seseorang waktu kami sedang berdebat.,Penganiayaan
+89,"Kemarin saya menyewa kamera melalui akun media sosial, tetapi setelah membayar, barangnya tidak diberikan, padahal gue sudah berusaha menyelesaikannya.",Penipuan dan Penggelapan
+90,"Aku kirim uang buat biaya administrasi pinjaman, tapi pinjamannya nggak cair dan orangnya menghilang.",Penipuan dan Penggelapan
+91,"Aku udah bayar jasa servis, tapi barang yang harus diperbaiki malah nggak dikembalikan, dan gue merasa dirugikan.",Penipuan dan Penggelapan
+92,"Saya kehilangan kamera saat berwisata dan menduga barang tersebut diambil orang, saya ingin mencari jalan keluar dari masalah ini.",Pencurian
+93,"Gue ditendang beberapa kali sama orang yang ngajak ribut di jalan, padahal saya sudah berusaha menyelesaikannya.",Penganiayaan
+94,Seseorang menyebarkan informasi yang tidak benar tentang saya melalui grup keluarga.,Pencemaran Nama Baik
+95,Ada orang yang menyebut nama saya dalam postingan yang berisi cerita bohong.,Pencemaran Nama Baik
+96,"Aku diminta kirim uang dulu supaya dapat hadiah, tapi setelah transfer hadiahnya nggak pernah ada, saya ingin tahu apakah kejadian ini bisa dilaporkan.",Penipuan dan Penggelapan
+97,"Aku ninggalin tas di perpustakaan sebentar, pas balik tasnya udah dibawa orang, saya benar-benar kecewa dengan kejadian ini.",Pencurian
+98,Gue baru tahu ada postingan yang isinya menjelek-jelekkan gue di internet.,Pencemaran Nama Baik
+99,"Gue transfer DP buat pesan katering, tapi pas hari acaranya makanan nggak datang, aku takut masalah ini makin besar.",Penipuan dan Penggelapan
+100,"Saya mengalami kekerasan fisik setelah terlibat pertengkaran dengan seseorang, gue pengin mencari jalan keluar dari masalah ini.",Penganiayaan
+101,"Saya dituduh melakukan kecurangan di tempat kerja tanpa penjelasan yang jelas, padahal saya sudah berusaha menyelesaikannya.",Pencemaran Nama Baik
+102,"Gue dikeroyok waktu keluar dari tempat hiburan dan sampai sekarang masih merasa sakit, aku sudah mencoba mencari informasi sendiri.",Penganiayaan
+103,"Gue dituduh mengambil uang teman, padahal gue nggak pernah melakukannya.",Pencemaran Nama Baik
+104,"Saya menyerahkan uang kepada seseorang untuk membelikan barang, tetapi barang tersebut tidak pernah diberikan.",Penipuan dan Penggelapan
+105,"Saya memberikan uang kepada seseorang untuk membayar utang bersama, tetapi uang tersebut justru dipakai sendiri.",Penipuan dan Penggelapan
+106,"Saya membayar biaya pendaftaran pekerjaan, tetapi setelah uang dikirim, pihak tersebut tidak bisa dihubungi, dan saya nggak tahu harus berbuat apa.",Penipuan dan Penggelapan
+107,Gue baru tahu ada barang yang hilang setelah melihat rekaman kamera di toko.,Pencurian
+108,"Saya menitipkan uang kepada seseorang, tetapi ketika diminta kembali, dia selalu menghindar, gue pengin mencari jalan keluar dari masalah ini.",Penipuan dan Penggelapan
+109,"Saya mengalami memar setelah seseorang memukul lengan saya dengan keras, padahal gue sudah berusaha menyelesaikannya.",Penganiayaan
+110,Saya kehilangan tas berisi dokumen setelah seseorang mengambilnya dari kursi ruang tunggu.,Pencurian
+111,"Aku lagi antre, tiba-tiba HP yang ada di saku celana hilang.",Pencurian
+112,"Kemarin sepeda motor tetangga hilang ketika diparkir di depan rumah, sampai gue stres memikirkan masalah ini.",Pencurian
+113,Ada orang yang menyebarkan cerita bohong tentang kehidupan pribadi saya.,Pencemaran Nama Baik
+114,"Aku parkir motor di depan minimarket sebentar, pas keluar motornya udah nggak ada, sampai aku merasa stres memikirkan masalah ini.",Pencurian
+115,"Gue ikut arisan online karena dijanjikan pencairan cepat, tapi uang yang gue setor nggak balik.",Penipuan dan Penggelapan
+116,"Barang yang saya beli tidak kunjung datang, sedangkan status pesanan tidak berubah selama berminggu-minggu.",Penipuan dan Penggelapan
+117,Gue nggak terima nama gue disebut dalam unggahan yang isinya tuduhan palsu.,Pencemaran Nama Baik
+118,"Saya merasa dirugikan karena ada orang yang menyebarkan cerita tidak benar mengenai usaha saya, tapi saya masih belum memahami apa yang harus dilakukan.",Pencemaran Nama Baik
+119,"Ada orang yang menyebarkan tuduhan bahwa saya punya utang yang belum dibayar, padahal sudah lunas.",Pencemaran Nama Baik
+120,"Gue udah ngasih uang ke teman buat bayar tagihan, tapi ternyata tagihannya nggak dibayar.",Penipuan dan Penggelapan
+121,"Gue taruh tas di kursi warung, pas mau pulang tasnya udah hilang.",Pencurian
+122,"Aku pulang kerja dan mendapati helm yang biasa kupakai sudah hilang dari motor, saya berharap ada solusi untuk masalah ini.",Pencurian
+123,Tetangga saya dipukul oleh seseorang ketika sedang terjadi perselisihan.,Penganiayaan
+124,"Gue ikut arisan online karena dijanjikan pencairan cepat, tapi uang yang gue setor nggak balik, sampai sekarang masalahnya masih berlanjut.",Penipuan dan Penggelapan
+125,Aku pulang ke rumah dan mendapati sepeda motor yang tadi diparkir sudah tidak ada.,Pencurian
+126,"Aku dipukul mantan teman karena masalah pribadi yang belum selesai, aku benar-benar berharap masalah ini segera selesai.",Penganiayaan
+127,"Foto saya diunggah dengan keterangan yang tidak sesuai dengan kenyataan, dan gue nggak tahu harus berbuat apa.",Pencemaran Nama Baik
+128,"Saya membayar biaya pendaftaran pekerjaan, tetapi setelah uang dikirim, pihak tersebut tidak bisa dihubungi, sampai aku merasa stres memikirkan masalah ini.",Penipuan dan Penggelapan
+129,"Laptop saya yang disimpan di kamar tiba-tiba hilang ketika saya pulang dari kampus, gue pengin tahu apakah kejadian ini bisa dilaporkan.",Pencurian
+130,"Aku ditawarin investasi sama kenalan, katanya modal bisa kembali sebulan, tapi sampai sekarang nggak ada kabar.",Penipuan dan Penggelapan
+131,"Aku jadi bahan omongan karena ada orang yang menyebarkan cerita bohong tentangku, aku merasa kejadian ini nggak adil.",Pencemaran Nama Baik
+132,"Saya memberikan uang kepada seseorang untuk membayar utang bersama, tetapi uang tersebut justru dipakai sendiri, gue pengin tahu tindakan apa yang sebaiknya dilakukan.",Penipuan dan Penggelapan
+133,Aku melihat postingan yang menyebut nama gue dengan tuduhan yang nggak benar.,Pencemaran Nama Baik
+134,"Ada orang yang menyebut nama saya dalam postingan yang berisi cerita bohong, dan aku merasa dirugikan.",Pencemaran Nama Baik
+135,Seseorang mengunggah tuduhan palsu tentang saya di Instagram.,Pencemaran Nama Baik
+136,"Ibu saya mengalami kekerasan fisik dari orang yang dikenalnya, saya ingin mendapatkan arahan lebih lanjut.",Penganiayaan
+137,"Kemarin ada orang masuk ke rumah saat kosong, beberapa barang saya hilang, aku khawatir kejadian ini terulang lagi.",Pencurian
+138,"Sepeda motor saya hilang saat diparkir di depan tempat olahraga, dan saya nggak tahu harus berbuat apa.",Pencurian
+139,"Aku udah bayar jasa servis, tapi barang yang harus diperbaiki malah nggak dikembalikan, gue pengin tahu langkah hukum yang bisa gue ambil.",Penipuan dan Penggelapan
+140,Aku jadi bahan omongan karena ada orang yang menyebarkan cerita bohong tentangku.,Pencemaran Nama Baik
+141,"Gue dituduh selingkuh sama orang lain, padahal cerita itu nggak benar.",Pencemaran Nama Baik
+142,"Teman-teman saya jadi salah paham setelah seseorang menyebarkan cerita yang tidak benar, aku ingin tahu apakah kejadian ini bisa dilaporkan.",Pencemaran Nama Baik
+143,"Saya pesan barang lewat Instagram, setelah uang dikirim akun penjualnya tiba-tiba hilang.",Penipuan dan Penggelapan
+144,Motor adik gue hilang waktu diparkir di depan rumah temannya.,Pencurian
+145,Saya merasa nama baik saya terganggu setelah tuduhan tentang diri saya tersebar di lingkungan kampus.,Pencemaran Nama Baik
+146,"Tas saya yang diletakkan di dekat pintu diambil seseorang tanpa izin, saya khawatir kejadian ini terulang lagi.",Pencurian
+147,"Gue difitnah di grup WhatsApp, padahal yang dituduhin ke gue itu nggak benar, semoga ada solusi yang tepat untuk masalah ini.",Pencemaran Nama Baik
+148,"Saya melihat seorang warga memukul tetangganya hingga terjatuh, dan gue nggak tahu harus berbuat apa.",Penganiayaan
+149,Gue ditendang beberapa kali sama orang yang ngajak ribut di jalan.,Penganiayaan
+150,"Seseorang menyebarkan informasi palsu tentang pekerjaan saya kepada banyak orang, aku ingin memastikan tindakan apa yang sebaiknya dilakukan.",Pencemaran Nama Baik
+151,"Gue udah bayar tiket online, tapi tiketnya nggak pernah dikirim dan adminnya nggak merespons.",Penipuan dan Penggelapan
+152,"Saya kehilangan HP saat berada di pasar dan tidak mengetahui siapa yang mengambilnya, semoga ada solusi yang tepat untuk masalah ini.",Pencurian
+153,"Aku melihat teman gue dipukuli beberapa orang di depan warung, padahal saya sudah berusaha menyelesaikannya.",Penganiayaan
+154,"Aku dijanjikan bisa dapat barang dengan harga murah kalau transfer dulu, tapi setelah transfer orangnya hilang.",Penipuan dan Penggelapan
+155,Adik saya dipukul oleh seseorang ketika sedang berada di lingkungan sekolah.,Penganiayaan
+156,"Saya membeli ponsel dari penjual yang mengaku barang baru, ternyata barang tidak sesuai dengan kesepakatan.",Penipuan dan Penggelapan
+157,"Gue parkir sepeda di halaman, tapi waktu mau dipakai lagi sepedanya nggak ada.",Pencurian
+158,"Saya mengalami memar setelah seseorang memukul lengan saya dengan keras, tapi sampai sekarang tetap nggak ada hasil.",Penganiayaan
+159,"Gue bayar biaya pendaftaran lomba lewat seseorang, tapi ternyata pendaftaran gue nggak pernah dilakukan, gue pengin tahu tindakan apa yang sebaiknya dilakukan.",Penipuan dan Penggelapan
+160,"Gue ninggalin dompet di meja sebentar, tapi pas balik dompetnya udah nggak ada, saya ingin mencari jalan keluar dari masalah ini.",Pencurian
+161,"Aku dituduh mencuri barang teman di grup kelas, padahal aku nggak melakukannya.",Pencemaran Nama Baik
+162,"HP ibu saya diambil orang saat beliau sedang berbelanja di pasar, aku khawatir kejadian ini terulang lagi.",Pencurian
+163,"Gue ikut arisan online karena dijanjikan pencairan cepat, tapi uang yang gue setor nggak balik, aku belum tahu harus meminta bantuan ke siapa.",Penipuan dan Penggelapan
+164,"Aku pulang ke rumah dan mendapati sepeda motor yang tadi diparkir sudah tidak ada, saya merasa kejadian ini nggak adil.",Pencurian
+165,"Saya menitipkan uang kepada seseorang, tetapi ketika diminta kembali, dia selalu menghindar.",Penipuan dan Penggelapan
+166,Saya ditinju oleh seseorang setelah terjadi cekcok di tempat parkir.,Penganiayaan
+167,"Saya mengetahui adanya unggahan di media sosial yang berisi tuduhan palsu terhadap saya, tapi sampai sekarang belum ada penyelesaian.",Pencemaran Nama Baik
+168,"Gue difitnah di grup WhatsApp, padahal yang dituduhin ke gue itu nggak benar.",Pencemaran Nama Baik
+169,Ada akun yang menulis cerita bohong tentang saya sampai orang-orang salah paham.,Pencemaran Nama Baik
+170,"Aku udah bayar uang muka buat pesan meja dan kursi, tapi barangnya nggak pernah selesai dibuat, gue cuma pengin masalah ini diselesaikan dengan baik.",Penipuan dan Penggelapan
+171,"Gue lagi makan di warung, terus tas yang ditaruh di sebelah kursi hilang, gue cuma pengin masalah ini diselesaikan dengan baik.",Pencurian
+172,"Ibu saya mengalami kekerasan fisik dari orang yang dikenalnya, aku ingin tahu langkah hukum yang bisa saya ambil.",Penganiayaan
+173,"Saya mendapati beberapa barang dagangan hilang dari kios ketika sedang melayani pembeli lain, saya sudah mencoba mencari informasi sendiri.",Pencurian
+174,"Saya memesan barang elektronik dan sudah membayar lunas, tetapi penjual terus menunda pengiriman.",Penipuan dan Penggelapan
+175,"Aku udah bayar pesanan dari minggu lalu, tapi penjualnya sekarang malah nggak bisa dihubungi, dan saya ingin tahu apa yang harus dilakukan.",Penipuan dan Penggelapan
+176,"Adik gue pulang dengan luka setelah berkelahi dengan beberapa anak di sekolah, dan saya merasa sangat dirugikan.",Penganiayaan
+177,"Gue dikasih janji uang bakal balik minggu depan, tapi udah berbulan-bulan nggak ada kejelasan.",Penipuan dan Penggelapan
+178,"Ada orang nyebarin gosip bohong tentang saya di media sosial, dan saya nggak tahu harus berbuat apa.",Pencemaran Nama Baik
+179,"Kemarin gue dipukuli orang yang nggak gue kenal waktu pulang malam, saya ingin mendapatkan penjelasan yang jelas.",Penganiayaan
+180,"Teman kerja saya memukul saya ketika kami sedang berselisih soal pekerjaan, saya ingin mendapatkan arahan lebih lanjut.",Penganiayaan
+181,"Ada orang nyebarin gosip bohong tentang saya di media sosial, gue pengin tahu langkah hukum yang bisa gue ambil.",Pencemaran Nama Baik
+182,Kemarin gue dipukuli orang yang nggak gue kenal waktu pulang malam.,Penganiayaan
+183,"Aku udah transfer buat beli laptop, tapi penjualnya malah ngeblokir nomor WhatsApp aku.",Penipuan dan Penggelapan
+184,Aku kehilangan uang di dalam tas setelah tas itu ditinggal sebentar di ruang kelas.,Pencurian
+185,"Gue didorong ke tembok lalu dipukul saat bertengkar dengan seseorang, sampai gue stres memikirkan masalah ini.",Penganiayaan
+186,"Aku dituduh mencuri barang teman di grup kelas, padahal aku nggak melakukannya, aku benar-benar kecewa dengan kejadian ini.",Pencemaran Nama Baik
+187,Gue difitnah di grup komunitas sampai beberapa orang mulai menjauhi gue.,Pencemaran Nama Baik
+188,"Saya menitipkan motor kepada seseorang untuk dijual, tetapi uang hasil penjualannya tidak diberikan kepada saya.",Penipuan dan Penggelapan
+189,Motor teman saya hilang dari tempat parkir ketika kami sedang berada di dalam gedung.,Pencurian
+190,"Saya ditampar orang yang sedang marah kepada saya di tempat umum, saya khawatir kejadian ini terulang lagi.",Penganiayaan
+191,Gue difitnah sama orang yang bahkan nggak pernah tanya langsung ke gue.,Pencemaran Nama Baik
+192,Seseorang menulis komentar yang menuduh saya melakukan perbuatan buruk tanpa bukti.,Pencemaran Nama Baik
+193,Saya ditampar orang yang sedang marah kepada saya di tempat umum.,Penganiayaan
+194,"Motor adik gue hilang waktu diparkir di depan rumah temannya, tapi saya bingung harus bagaimana.",Pencurian
+195,Saya mendapati pintu kamar kos terbuka dan beberapa barang sudah hilang.,Pencurian
+196,"Gue diserang orang di jalan dan sempat jatuh karena didorong, saya ingin memastikan tindakan apa yang sebaiknya dilakukan.",Penganiayaan
+197,Aku didorong dan dipukul ketika sedang berdebat dengan seseorang.,Penganiayaan
+198,"Kemarin gue beli HP lewat marketplace, uang udah ditransfer tapi barangnya nggak datang-datang.",Penipuan dan Penggelapan
+199,"Ada orang yang menyebut nama saya dalam postingan yang berisi cerita bohong, gue pengin mendapatkan penjelasan yang jelas.",Pencemaran Nama Baik
+200,"Tas saya yang diletakkan di dekat pintu diambil seseorang tanpa izin, saya ingin mendapatkan arahan lebih lanjut.",Pencurian
+201,"Seseorang menulis komentar yang menuduh saya melakukan perbuatan buruk tanpa bukti, aku cuma ingin masalah ini diselesaikan dengan baik.",Pencemaran Nama Baik
+202,"Gue dituduh menyebarkan rahasia teman, padahal gue nggak pernah melakukan itu, aku sudah mencoba mencari informasi sendiri.",Pencemaran Nama Baik
+203,"Gue terluka setelah seseorang melempar benda keras ke arah gue, aku sudah mencoba menyelesaikannya baik-baik.",Penganiayaan
+204,Aku melihat teman gue dipukuli beberapa orang di depan warung.,Penganiayaan
+205,Seseorang mengirim pesan ke banyak orang dengan isi tuduhan yang merugikan saya.,Pencemaran Nama Baik
+206,"Teman saya meminjam uang untuk membayar kontrakan, tetapi uangnya ternyata dipakai untuk hal lain.",Penipuan dan Penggelapan
+207,"Gue dituduh menyebarkan rahasia teman, padahal gue nggak pernah melakukan itu, sampai sekarang masih belum selesai.",Pencemaran Nama Baik
+208,"Saya diserang sekelompok orang ketika berjalan pulang bersama teman, aku berharap ada solusi untuk masalah ini.",Penganiayaan
+209,"Gue lagi makan di warung, terus tas yang ditaruh di sebelah kursi hilang.",Pencurian
+210,Saya menemukan komentar yang menyebarkan informasi palsu tentang diri saya.,Pencemaran Nama Baik
+211,Saya melihat seseorang mengambil tas milik orang lain lalu pergi begitu saja.,Pencurian
+212,"Gue dipukul orang asing di jalan, untungnya ada warga yang membantu.",Penganiayaan
+213,Gue diserang orang di jalan dan sempat jatuh karena didorong.,Penganiayaan
+214,"Saya membeli tiket konser dari seseorang, tetapi tiket yang dijanjikan tidak pernah diberikan, sampai sekarang masih belum selesai.",Penipuan dan Penggelapan
+215,"HP ibu saya diambil orang saat beliau sedang berbelanja di pasar, saya ingin mendapatkan arahan lebih lanjut.",Pencurian
+216,Saya merasa nama baik saya dirugikan karena seseorang menyebarkan tuduhan tanpa bukti.,Pencemaran Nama Baik
+217,Gue kena pukul di bagian kepala waktu berusaha melindungi teman.,Penganiayaan
+218,"Barang yang saya beli tidak kunjung datang, sedangkan status pesanan tidak berubah selama berminggu-minggu, tapi gue masih belum paham harus bagaimana.",Penipuan dan Penggelapan
+219,"Aku transfer uang buat pesanan, terus penjual bilang ada biaya tambahan terus sampai aku bingung.",Penipuan dan Penggelapan
+220,"Motor adik gue hilang waktu diparkir di depan rumah temannya, dan gue nggak tahu harus berbuat apa.",Pencurian
+221,"Aku dijanjikan bisa dapat barang dengan harga murah kalau transfer dulu, tapi setelah transfer orangnya hilang, aku sudah mencoba mencari informasi sendiri.",Penipuan dan Penggelapan
+222,Aku kehilangan jaket di ruang kelas dan teman melihat seseorang membawanya pergi.,Pencurian
+223,"Gue bayar orang buat beliin tiket perjalanan, ternyata tiketnya nggak pernah dipesan.",Penipuan dan Penggelapan
+224,"Aku melihat teman gue dipukuli beberapa orang di depan warung, sampai gue stres memikirkan masalah ini.",Penganiayaan
+225,Saya mengalami memar setelah seseorang memukul lengan saya dengan keras.,Penganiayaan
+226,"Saya ditinju oleh seseorang setelah terjadi cekcok di tempat parkir, aku sudah mencoba menyelesaikannya baik-baik.",Penganiayaan
+227,"Aku tergiur tawaran kerja online yang katanya gampang dan gajinya besar, ternyata disuruh transfer dulu.",Penipuan dan Penggelapan
+228,"Gue parkir motor di halaman kantor, tapi waktu pulang motornya udah nggak ada.",Pencurian
+229,"Gue udah bayar jasa renovasi rumah, tapi pekerjaannya ditinggal dan uang sisanya nggak jelas.",Penipuan dan Penggelapan
+230,Adik saya mengadu bahwa ia ditampar oleh teman sekelasnya.,Penganiayaan
+231,"Saya menemukan komentar yang menyebarkan informasi palsu tentang diri saya, saya belum tahu harus meminta bantuan ke siapa.",Pencemaran Nama Baik
+232,"Aku parkir motor di depan minimarket sebentar, pas keluar motornya udah nggak ada.",Pencurian
+233,"Seseorang mengunggah tuduhan palsu tentang saya di Instagram, gue pengin tahu apakah kejadian ini bisa dilaporkan.",Pencemaran Nama Baik
+234,Saya kehilangan HP saat berada di pasar dan tidak mengetahui siapa yang mengambilnya.,Pencurian
+235,"Seseorang mengambil helm saya dari motor yang diparkir di halaman kampus, tapi hasilnya tetap nggak sesuai harapan.",Pencurian
+236,"Aku udah bayar pesanan dari minggu lalu, tapi penjualnya sekarang malah nggak bisa dihubungi, saya benar-benar berharap masalah ini segera selesai.",Penipuan dan Penggelapan
+237,"Aku parkir motor di depan minimarket sebentar, pas keluar motornya udah nggak ada, gue berharap ada solusi untuk masalah ini.",Pencurian
+238,Tas saya yang diletakkan di dekat pintu diambil seseorang tanpa izin.,Pencurian
+239,Sepasang sepatu saya hilang dari rak yang ada di depan rumah.,Pencurian
+240,"Seseorang menyebarkan kabar buruk tentang saya ke tetangga satu lingkungan, padahal gue sudah berusaha menyelesaikannya.",Pencemaran Nama Baik
+241,Ibu saya mengalami kekerasan fisik dari orang yang dikenalnya.,Penganiayaan
+242,"Saya menyerahkan uang untuk keperluan bersama, tetapi uang tersebut digunakan untuk kepentingan pribadi, gue udah mencoba menyelesaikannya baik-baik.",Penipuan dan Penggelapan
+243,"Foto saya diunggah dengan keterangan yang tidak sesuai dengan kenyataan, tapi orangnya malah susah dihubungi.",Pencemaran Nama Baik
+244,"Gue ikut bisnis yang dijanjikan keuntungan besar, tetapi uang yang disetorkan tidak jelas penggunaannya, saya ingin mendapatkan penjelasan yang jelas.",Penipuan dan Penggelapan
+245,"Aku transfer uang ke rekening yang diberikan penjual, tapi setelah itu semua pesan gue cuma dibaca.",Penipuan dan Penggelapan
+246,"Gue dituduh menyebarkan rahasia teman, padahal gue nggak pernah melakukan itu.",Pencemaran Nama Baik
+247,"Ada yang bikin status Facebook tentang saya dengan cerita yang dilebih-lebihkan, sampai sekarang masalahnya masih berlanjut.",Pencemaran Nama Baik
+248,"Saya membayar biaya pendaftaran pekerjaan, tetapi setelah uang dikirim, pihak tersebut tidak bisa dihubungi.",Penipuan dan Penggelapan
+249,"Bapak saya didorong sampai jatuh oleh tetangga saat mereka bertengkar, gue benar-benar berharap masalah ini segera selesai.",Penganiayaan
+250,"Gue transfer DP buat pesan katering, tapi pas hari acaranya makanan nggak datang.",Penipuan dan Penggelapan
+251,"Saya mengetahui seseorang menceritakan hal yang tidak benar tentang saya kepada rekan kerja, gue pengin mendapatkan penjelasan yang jelas.",Pencemaran Nama Baik
+252,"Gue baru tahu ada barang yang hilang setelah melihat rekaman kamera di toko, saya ingin mencari jalan keluar dari masalah ini.",Pencurian
+253,"Aku didorong dan dipukul ketika sedang berdebat dengan seseorang, sampai aku merasa stres memikirkan masalah ini.",Penganiayaan
+254,"Kemarin gue dipukuli orang yang nggak gue kenal waktu pulang malam, gue pengin tahu langkah hukum yang bisa gue ambil.",Penganiayaan
+255,Saya diserang sekelompok orang ketika berjalan pulang bersama teman.,Penganiayaan
+256,"Aku udah bayar uang muka buat pesan meja dan kursi, tapi barangnya nggak pernah selesai dibuat, gue udah mencoba menyelesaikannya baik-baik.",Penipuan dan Penggelapan
+257,"Aku tergiur tawaran kerja online yang katanya gampang dan gajinya besar, ternyata disuruh transfer dulu, gue pengin mendapatkan penjelasan yang jelas.",Penipuan dan Penggelapan
+258,Gue kehilangan uang di laci toko saat lagi sibuk melayani pembeli.,Pencurian
+259,"Ada yang bikin status Facebook tentang saya dengan cerita yang dilebih-lebihkan, saya ingin memastikan tindakan apa yang sebaiknya dilakukan.",Pencemaran Nama Baik
+260,"Seseorang menulis unggahan yang menuduh saya melakukan penipuan tanpa menunjukkan bukti, saya ingin mendapatkan penjelasan yang jelas.",Pencemaran Nama Baik
+261,"Seseorang mengirim pesan ke teman-teman saya dan menyebut saya sebagai penipu, gue berharap masalah ini bisa segera selesai.",Pencemaran Nama Baik
+262,"Gue udah bayar jasa renovasi rumah, tapi pekerjaannya ditinggal dan uang sisanya nggak jelas, tapi sampai sekarang tetap nggak ada hasil.",Penipuan dan Penggelapan
+263,Seseorang menyebarkan informasi palsu tentang pekerjaan saya kepada banyak orang.,Pencemaran Nama Baik
+264,"Saya merasa nama baik saya terganggu setelah tuduhan tentang diri saya tersebar di lingkungan kampus, aku cuma ingin masalah ini diselesaikan dengan baik.",Pencemaran Nama Baik
+265,"Gue udah bayar jasa renovasi rumah, tapi pekerjaannya ditinggal dan uang sisanya nggak jelas, dan gue merasa sangat dirugikan.",Penipuan dan Penggelapan
+266,"Gue difitnah di grup WhatsApp, padahal yang dituduhin ke gue itu nggak benar, tapi hasilnya tetap nggak sesuai harapan.",Pencemaran Nama Baik
+267,Saya mengetahui adanya unggahan di media sosial yang berisi tuduhan palsu terhadap saya.,Pencemaran Nama Baik
+268,"Saya menyewakan laptop kepada kenalan, tetapi setelah masa sewa habis laptop tersebut tidak dikembalikan.",Penipuan dan Penggelapan
+269,"Gue ninggalin dompet di meja sebentar, tapi pas balik dompetnya udah nggak ada, gue udah mencoba mencari informasi sendiri.",Pencurian
+270,"Aku lagi di kelas, pas istirahat dompet yang ada di tas ternyata hilang.",Pencurian
+271,"Aku tergiur tawaran kerja online yang katanya gampang dan gajinya besar, ternyata disuruh transfer dulu, dan aku merasa dirugikan.",Penipuan dan Penggelapan
+272,"Aku baru sadar dompetku diambil orang saat mau membayar belanjaan, aku ingin tahu langkah hukum yang bisa saya ambil.",Pencurian
+273,"Gue lagi jalan pulang, tiba-tiba ada orang mukul gue sampai jatuh.",Penganiayaan
+274,"Aku ditampar orang di depan banyak orang saat sedang adu mulut, saya ingin tahu apakah kejadian ini bisa dilaporkan.",Penganiayaan
+275,"Gue dipukul tetangga setelah terjadi cekcok di depan rumah, gue berharap masalah ini bisa segera selesai.",Penganiayaan
+276,"Ibu saya mengalami kekerasan fisik dari orang yang dikenalnya, aku benar-benar berharap masalah ini segera selesai.",Penganiayaan
+277,"Saya ditampar orang yang sedang marah kepada saya di tempat umum, saya cuma ingin masalah ini diselesaikan dengan baik.",Penganiayaan
+278,"Gue kaget waktu tahu nama gue dijelek-jelekin di grup teman, aku cuma ingin masalah ini diselesaikan dengan baik.",Pencemaran Nama Baik
+279,"Gue kehilangan uang di laci toko saat lagi sibuk melayani pembeli, saya sudah mencoba mencari informasi sendiri.",Pencurian
+280,Aku nggak terima karena seseorang menyebarkan fitnah tentang aku di media sosial.,Pencemaran Nama Baik
+281,"Gue udah bayar tiket online, tapi tiketnya nggak pernah dikirim dan adminnya nggak merespons, gue takut masalah ini makin besar.",Penipuan dan Penggelapan
+282,"Gue dikeroyok waktu keluar dari tempat hiburan dan sampai sekarang masih merasa sakit, gue berharap ada solusi untuk masalah ini.",Penganiayaan
+283,"Kemarin gue dipukuli orang yang nggak gue kenal waktu pulang malam, dan saya merasa dirugikan.",Penganiayaan
+284,"Gue dikasih janji uang bakal balik minggu depan, tapi udah berbulan-bulan nggak ada kejelasan, aku berharap masalah ini bisa segera selesai.",Penipuan dan Penggelapan
+285,Saya dipukul seseorang sampai mengalami memar di bagian wajah.,Penganiayaan
+286,"Aku ditawarin investasi sama kenalan, katanya modal bisa kembali sebulan, tapi sampai sekarang nggak ada kabar, semoga ada solusi yang tepat untuk masalah ini.",Penipuan dan Penggelapan
+287,"Motor adik gue hilang waktu diparkir di depan rumah temannya, saya belum tahu harus meminta bantuan ke siapa.",Pencurian
+288,Aku dituduh melakukan sesuatu yang sebenarnya nggak pernah aku lakukan.,Pencemaran Nama Baik
+289,"Laptop teman saya diambil seseorang dari meja kelas tanpa izin, tapi hasilnya tetap nggak sesuai harapan.",Pencurian
+290,Aku pulang kerja dan mendapati helm yang biasa kupakai sudah hilang dari motor.,Pencurian
+291,"Aku pesan kamera bekas, katanya masih bagus, tapi setelah dibayar penjual malah nggak mau mengirim barang, aku sudah mencoba mencari informasi sendiri.",Penipuan dan Penggelapan
+292,"Saya menitipkan motor kepada seseorang untuk dijual, tetapi uang hasil penjualannya tidak diberikan kepada saya, dan aku merasa dirugikan.",Penipuan dan Penggelapan
+293,"Saya menemukan komentar yang menyebarkan informasi palsu tentang diri saya, dan gue pengin tahu apa yang harus dilakukan.",Pencemaran Nama Baik
+294,"Gue udah bayar penuh, tapi orang yang jual barang malah bilang belum menerima uangnya.",Penipuan dan Penggelapan
+295,"Aku ditampar orang di depan banyak orang saat sedang adu mulut, tapi hasilnya tetap nggak sesuai harapan.",Penganiayaan
+296,Foto saya diunggah dengan keterangan yang tidak sesuai dengan kenyataan.,Pencemaran Nama Baik
+297,"Saya mengalami memar setelah seseorang memukul lengan saya dengan keras, gue pengin tahu tindakan apa yang sebaiknya dilakukan.",Penganiayaan
+298,"Saya menyerahkan uang kepada rekan untuk membeli perlengkapan usaha, tetapi uang itu tidak digunakan sesuai kesepakatan.",Penipuan dan Penggelapan
+299,"Seseorang menyebarkan informasi palsu tentang pekerjaan saya kepada banyak orang, aku berharap ada solusi untuk masalah ini.",Pencemaran Nama Baik
+300,Gue dipukul tetangga setelah terjadi cekcok di depan rumah.,Penganiayaan
+301,"Aku ditendang saat mencoba memisahkan dua orang yang sedang berkelahi, aku benar-benar berharap masalah ini segera selesai.",Penganiayaan
+302,Sepeda motor saya hilang saat diparkir di depan tempat olahraga.,Pencurian
+303,"Saya mendapati pintu kamar kos terbuka dan beberapa barang sudah hilang, padahal saya sudah berusaha menyelesaikannya.",Pencurian
+304,Tetangga saya dipukul orang tidak dikenal dan beberapa warga melihat kejadian tersebut.,Penganiayaan
+305,Gue dipukul sama orang yang tiba-tiba marah di tempat parkir.,Penganiayaan
+306,"Gue kaget waktu tahu nama gue dijelek-jelekin di grup teman, sampai saya merasa stres memikirkan masalah ini.",Pencemaran Nama Baik
+307,"Saya menyerahkan uang kepada seseorang untuk membelikan barang, tetapi barang tersebut tidak pernah diberikan, aku benar-benar kecewa dengan kejadian ini.",Penipuan dan Penggelapan
+308,"Kemarin ada orang masuk ke rumah saat kosong, beberapa barang saya hilang.",Pencurian
+309,"Aku ditampar seseorang waktu kami sedang berdebat, aku berharap ada solusi untuk masalah ini.",Penganiayaan
+310,"Gue difitnah sama orang yang bahkan nggak pernah tanya langsung ke gue, sampai gue stres memikirkan masalah ini.",Pencemaran Nama Baik
+311,Saya dipukul seseorang ketika mencoba meminta penjelasan tentang masalah kami.,Penganiayaan
+312,Sepeda saya yang diparkir di depan rumah dibawa orang tanpa izin.,Pencurian
+313,"Seseorang mengunggah tuduhan palsu tentang saya di Instagram, padahal saya sudah berusaha menyelesaikannya.",Pencemaran Nama Baik
+314,"Gue lagi makan di warung, terus tas yang ditaruh di sebelah kursi hilang, saya benar-benar kecewa dengan kejadian ini.",Pencurian
+315,Saya dipukul hingga harus mendapatkan pemeriksaan medis.,Penganiayaan
+316,"Laptop teman saya diambil seseorang dari meja kelas tanpa izin, saya takut masalah ini makin besar.",Pencurian
+317,"Aku diminta kirim uang dulu supaya dapat hadiah, tapi setelah transfer hadiahnya nggak pernah ada, saya khawatir kejadian ini terulang lagi.",Penipuan dan Penggelapan
+318,"Aku menemukan unggahan yang menyebut namaku dan membuat orang lain berpikir buruk tentangku, dan gue pengin tahu apa yang harus dilakukan.",Pencemaran Nama Baik
+319,"Saya diserang sekelompok orang ketika berjalan pulang bersama teman, dan aku ingin tahu apa yang harus dilakukan.",Penganiayaan
+320,"Aku diminta membayar uang muka buat sewa kos, tetapi ternyata kamar yang dijanjikan tidak ada.",Penipuan dan Penggelapan
+321,"Perhiasan yang disimpan di kamar hilang setelah rumah ditinggal beberapa jam, tapi aku bingung harus bagaimana.",Pencurian
+322,"Aku dituduh merusak barang milik orang lain padahal aku tidak berada di lokasi saat kejadian, dan gue merasa dirugikan.",Pencemaran Nama Baik
+323,"Aku dikeroyok saat sedang berada di luar rumah bersama teman, gue pengin mencari jalan keluar dari masalah ini.",Penganiayaan
+324,"Kemarin sepeda motor tetangga hilang ketika diparkir di depan rumah, gue belum tahu harus minta bantuan ke siapa.",Pencurian
+325,"Aku baru sadar dompetku diambil orang saat mau membayar belanjaan, sampai aku merasa stres memikirkan masalah ini.",Pencurian
+326,"Saya mengetahui adanya unggahan di media sosial yang berisi tuduhan palsu terhadap saya, gue takut masalah ini makin besar.",Pencemaran Nama Baik
+327,"Awalnya dia meyakinkan banget, katanya barang langsung dikirim setelah transfer, tapi sampai sekarang nihil.",Penipuan dan Penggelapan
+328,HP adik saya hilang saat dia sedang bermain di taman.,Pencurian
+329,"Saya membayar biaya pendaftaran pekerjaan, tetapi setelah uang dikirim, pihak tersebut tidak bisa dihubungi, aku ingin mendapatkan penjelasan yang jelas.",Penipuan dan Penggelapan
+330,"Saya membeli tiket konser dari seseorang, tetapi tiket yang dijanjikan tidak pernah diberikan, gue takut masalah ini makin besar.",Penipuan dan Penggelapan
+331,Gue didorong ke tembok lalu dipukul saat bertengkar dengan seseorang.,Penganiayaan
+332,"Kemarin ada orang masuk ke rumah saat kosong, beberapa barang saya hilang, gue cuma pengin masalah ini diselesaikan dengan baik.",Pencurian
+333,Saya kehilangan barang di ruang ganti dan tidak mengetahui siapa yang mengambilnya.,Pencurian
+334,"Saya ditampar orang yang sedang marah kepada saya di tempat umum, gue khawatir kejadian ini terulang lagi.",Penganiayaan
+335,Teman saya mengalami luka setelah dikeroyok oleh beberapa orang.,Penganiayaan
+336,"Kemarin motor gue hilang waktu lagi mancing sama teman-teman, saya ingin mendapatkan penjelasan yang jelas.",Pencurian
+337,"Aku didorong sampai jatuh waktu bertengkar dengan tetangga, saya benar-benar kecewa dengan kejadian ini.",Penganiayaan
+338,"Saya meminjamkan uang kepada kenalan, tetapi dia menyangkal pernah menerima uang tersebut, dan saya ingin tahu apa yang harus dilakukan.",Penipuan dan Penggelapan
+339,Kemarin motor gue hilang waktu lagi mancing sama teman-teman.,Pencurian
+340,Teman saya dikeroyok orang tidak dikenal ketika sedang pulang dari tempat kerja.,Penganiayaan
+341,"Gue nitip beli barang ke seseorang, uangnya udah dikasih tapi barangnya nggak dibeli dan duitnya nggak balik.",Penipuan dan Penggelapan
+342,"Saya dipukul seseorang ketika mencoba meminta penjelasan tentang masalah kami, dan aku merasa dirugikan.",Penganiayaan
+343,"Motor adik gue hilang waktu diparkir di depan rumah temannya, saya berharap ada solusi untuk masalah ini.",Pencurian
+344,"Gue ditonjok seseorang sampai bibir gue terluka, saya ingin tahu langkah hukum yang bisa saya ambil.",Penganiayaan
+345,Saya melihat orang asing membawa kabur sepeda yang diparkir di halaman.,Pencurian
+346,"Saya sudah membayar pesanan makanan dalam jumlah besar, tetapi pesanan tidak dikirim dan penjual menghilang.",Penipuan dan Penggelapan
+347,"Kemarin gue beli HP lewat marketplace, uang udah ditransfer tapi barangnya nggak datang-datang, aku ingin memastikan tindakan apa yang sebaiknya dilakukan.",Penipuan dan Penggelapan
+348,Aku menemukan unggahan yang menyebut namaku dan membuat orang lain berpikir buruk tentangku.,Pencemaran Nama Baik
+349,Saya menyadari dompet saya hilang setelah turun dari angkutan umum.,Pencurian
+350,Ada orang yang menyebarkan rumor tentang saya lewat status WhatsApp.,Pencemaran Nama Baik
+351,"Gue baru tahu ada barang yang hilang setelah melihat rekaman kamera di toko, tapi gue bingung harus bagaimana.",Pencurian
+352,"Gue merasa nama baik gue dicemarkan setelah tuduhan palsu itu tersebar, tapi aku masih belum paham harus bagaimana.",Pencemaran Nama Baik
+353,"Aku nggak tahu masalahnya apa, tiba-tiba orang itu mukul saya.",Penganiayaan
+354,"Saya dipukul hingga harus mendapatkan pemeriksaan medis, tapi hasilnya tetap nggak sesuai harapan.",Penganiayaan
+355,"Aku diminta kirim uang dulu supaya dapat hadiah, tapi setelah transfer hadiahnya nggak pernah ada.",Penipuan dan Penggelapan
+356,Ada yang bikin status Facebook tentang saya dengan cerita yang dilebih-lebihkan.,Pencemaran Nama Baik
+357,"Aku dituduh melakukan sesuatu yang sebenarnya nggak pernah aku lakukan, sampai sekarang belum ada kejelasan.",Pencemaran Nama Baik
+358,Laptop saya yang disimpan di kamar tiba-tiba hilang ketika saya pulang dari kampus.,Pencurian
+359,"Aku transfer uang buat pesanan, terus penjual bilang ada biaya tambahan terus sampai aku bingung, dan aku nggak tahu harus berbuat apa.",Penipuan dan Penggelapan
+360,"Motor adik gue hilang waktu diparkir di depan rumah temannya, dan saya merasa sangat dirugikan.",Pencurian
+361,"Aku pulang kerja dan mendapati helm yang biasa kupakai sudah hilang dari motor, saya ingin mendapatkan penjelasan yang jelas.",Pencurian
+362,"Aku dipukul seseorang sampai tubuhku terasa sakit dan harus berobat, tapi sampai sekarang belum ada penyelesaian.",Penganiayaan
+363,Gue baru sadar laptop gue hilang setelah ada orang asing masuk ke ruang kerja.,Pencurian
+364,Gue kaget waktu tahu nama gue dijelek-jelekin di grup teman.,Pencemaran Nama Baik
+365,"Saya transfer uang untuk membeli motor bekas, tetapi penjualnya menghilang setelah menerima pembayaran.",Penipuan dan Penggelapan
+366,"Saya membeli ponsel dari penjual yang mengaku barang baru, ternyata barang tidak sesuai dengan kesepakatan, gue pengin mencari jalan keluar dari masalah ini.",Penipuan dan Penggelapan
+367,"Gue bayar biaya pendaftaran lomba lewat seseorang, tapi ternyata pendaftaran gue nggak pernah dilakukan.",Penipuan dan Penggelapan
+368,"Aku kehilangan jaket di ruang kelas dan teman melihat seseorang membawanya pergi, gue cuma pengin masalah ini diselesaikan dengan baik.",Pencurian
+369,"Ada yang bikin status Facebook tentang saya dengan cerita yang dilebih-lebihkan, gue udah mencoba menyelesaikannya baik-baik.",Pencemaran Nama Baik
+370,"Gue naruh HP di meja, terus pas balik lagi HP-nya udah nggak ada, tapi hasilnya tetap nggak sesuai harapan.",Pencurian
+371,"Saya membayar uang muka pembelian barang, tetapi pihak penjual tidak memenuhi kesepakatan.",Penipuan dan Penggelapan
+372,"Saya merasa dirugikan karena ada orang yang menyebarkan cerita tidak benar mengenai usaha saya, sampai sekarang masalahnya masih berlanjut.",Pencemaran Nama Baik
+373,"Saya memberikan uang kepada seseorang untuk membayar utang bersama, tetapi uang tersebut justru dipakai sendiri, aku berharap masalah ini bisa segera selesai.",Penipuan dan Penggelapan
+374,"Saya menemukan komentar yang menyebarkan informasi palsu tentang diri saya, gue berharap masalah ini bisa segera selesai.",Pencemaran Nama Baik
+375,"Gue udah bayar jasa renovasi rumah, tapi pekerjaannya ditinggal dan uang sisanya nggak jelas, tapi aku masih belum paham harus bagaimana.",Penipuan dan Penggelapan
+376,Aku dipukul seseorang sampai tubuhku terasa sakit dan harus berobat.,Penganiayaan
+377,"Saya mengalami kekerasan fisik setelah terlibat pertengkaran dengan seseorang, tetapi hasilnya tetap tidak sesuai harapan.",Penganiayaan
+378,"Aku kehilangan jaket di ruang kelas dan teman melihat seseorang membawanya pergi, aku ingin tahu apakah kejadian ini bisa dilaporkan.",Pencurian
+379,"Gue difitnah sama orang yang bahkan nggak pernah tanya langsung ke gue, gue khawatir kejadian ini terulang lagi.",Pencemaran Nama Baik
+380,"HP ibu saya diambil orang saat beliau sedang berbelanja di pasar, tapi hasilnya tetap nggak sesuai harapan.",Pencurian
+381,"Gue merasa nama baik gue dicemarkan setelah tuduhan palsu itu tersebar, dan saya merasa dirugikan.",Pencemaran Nama Baik
+382,Seseorang menyebarkan kabar buruk tentang saya ke tetangga satu lingkungan.,Pencemaran Nama Baik
+383,"Gue baru sadar laptop gue hilang setelah ada orang asing masuk ke ruang kerja, aku benar-benar berharap masalah ini segera selesai.",Pencurian
+384,"Gue difitnah di grup WhatsApp, padahal yang dituduhin ke gue itu nggak benar, aku benar-benar berharap masalah ini segera selesai.",Pencemaran Nama Baik
+385,"Gue ninggalin dompet di meja sebentar, tapi pas balik dompetnya udah nggak ada.",Pencurian
+386,"Gue dikasih janji uang bakal balik minggu depan, tapi udah berbulan-bulan nggak ada kejelasan, gue pengin tahu apakah kejadian ini bisa dilaporkan.",Penipuan dan Penggelapan
+387,Saya mengalami kekerasan fisik setelah terlibat pertengkaran dengan seseorang.,Penganiayaan
+388,Aku baru sadar dompetku diambil orang saat mau membayar belanjaan.,Pencurian
+389,"Saya meminjamkan uang kepada kenalan, tetapi dia menyangkal pernah menerima uang tersebut, aku merasa kejadian ini nggak adil.",Penipuan dan Penggelapan
+390,"Aku lagi ngobrol sama teman, terus ada orang mengambil sandal yang kutaruh di depan pintu.",Pencurian
+391,"Seseorang mengunggah tuduhan palsu tentang saya di Instagram, gue benar-benar berharap masalah ini segera selesai.",Pencemaran Nama Baik
+392,"Aku pulang ke rumah dan mendapati sepeda motor yang tadi diparkir sudah tidak ada, dan gue merasa sangat dirugikan.",Pencurian
+393,"Aku kehilangan uang di dalam tas setelah tas itu ditinggal sebentar di ruang kelas, sampai sekarang masalahnya masih berlanjut.",Pencurian
+394,"Kemarin gue beli HP lewat marketplace, uang udah ditransfer tapi barangnya nggak datang-datang, gue udah mencoba mencari informasi sendiri.",Penipuan dan Penggelapan
+395,"Aku udah bayar pesanan dari minggu lalu, tapi penjualnya sekarang malah nggak bisa dihubungi, sampai saya merasa stres memikirkan masalah ini.",Penipuan dan Penggelapan
+396,Adik gue pulang dengan luka setelah berkelahi dengan beberapa anak di sekolah.,Penganiayaan
+397,"Gue baru tahu ada postingan yang isinya menjelek-jelekkan gue di internet, saya belum tahu harus meminta bantuan ke siapa.",Pencemaran Nama Baik
+398,"Saya mendapati pintu kamar kos terbuka dan beberapa barang sudah hilang, aku takut masalah ini makin besar.",Pencurian
+399,"Sepeda saya yang diparkir di depan rumah dibawa orang tanpa izin, aku ingin mendapatkan arahan lebih lanjut.",Pencurian
+400,"Laptop teman saya diambil seseorang dari meja kelas tanpa izin, gue pengin mendapatkan penjelasan yang jelas.",Pencurian
+401,"Aku dikeroyok saat sedang berada di luar rumah bersama teman, gue takut masalah ini makin besar.",Penganiayaan
+402,"Gue lagi naik bus, pas turun HP di kantong ternyata udah nggak ada.",Pencurian
+403,HP ibu saya diambil orang saat beliau sedang berbelanja di pasar.,Pencurian
+404,Saya mendapati uang di dalam dompet berkurang setelah dompet itu sempat ditinggal di meja.,Pencurian
+405,"Aku menemukan unggahan yang menyebut namaku dan membuat orang lain berpikir buruk tentangku, gue pengin tahu apakah kejadian ini bisa dilaporkan.",Pencemaran Nama Baik
+406,"Laptop teman saya diambil seseorang dari meja kelas tanpa izin, dan aku merasa sangat dirugikan.",Pencurian
+407,"Teman saya dikeroyok orang tidak dikenal ketika sedang pulang dari tempat kerja, dan gue nggak tahu harus berbuat apa.",Penganiayaan
+408,"Saya mengalami kekerasan fisik setelah terlibat pertengkaran dengan seseorang, gue pengin tahu tindakan apa yang sebaiknya dilakukan.",Penganiayaan
+409,"Saya dipukul hingga harus mendapatkan pemeriksaan medis, saya benar-benar kecewa dengan kejadian ini.",Penganiayaan
+410,"Saya membeli tiket konser dari seseorang, tetapi tiket yang dijanjikan tidak pernah diberikan.",Penipuan dan Penggelapan
+411,Saya merasa dirugikan karena ada orang yang menyebarkan cerita tidak benar mengenai usaha saya.,Pencemaran Nama Baik
+412,Saya melihat seseorang menendang dan memukul orang lain saat terjadi keributan.,Penganiayaan
+413,"Kemarin ada orang masuk ke rumah saat kosong, beberapa barang saya hilang, saya ingin memastikan tindakan apa yang sebaiknya dilakukan.",Pencurian
+414,"Saya ditinju oleh seseorang setelah terjadi cekcok di tempat parkir, dan aku merasa sangat dirugikan.",Penganiayaan
+415,Gue merasa nama baik gue dicemarkan setelah tuduhan palsu itu tersebar.,Pencemaran Nama Baik
+416,"Aku udah bayar uang muka buat pesan meja dan kursi, tapi barangnya nggak pernah selesai dibuat, gue pengin mencari jalan keluar dari masalah ini.",Penipuan dan Penggelapan
+417,"Saya dipukul hingga harus mendapatkan pemeriksaan medis, gue benar-benar berharap masalah ini segera selesai.",Penganiayaan
+418,"Gue nyimpen uang di dalam lemari, tapi pas mau diambil ternyata udah nggak ada.",Pencurian
+419,Gue dipukul teman sendiri gara-gara salah paham waktu ngobrol.,Penganiayaan
+420,"Saya dituduh menipu seseorang, padahal saya tidak pernah melakukan hal tersebut.",Pencemaran Nama Baik
+421,"Seseorang menyebarkan kabar buruk tentang saya ke tetangga satu lingkungan, dan gue nggak tahu harus berbuat apa.",Pencemaran Nama Baik
+422,"Aku udah bayar jasa servis, tapi barang yang harus diperbaiki malah nggak dikembalikan.",Penipuan dan Penggelapan
+423,"Aku minjemin uang ke teman buat modal usaha, tapi ternyata uangnya dipakai buat keperluan lain.",Penipuan dan Penggelapan
+424,"Aku udah bayar jasa servis, tapi barang yang harus diperbaiki malah nggak dikembalikan, aku takut masalah ini makin besar.",Penipuan dan Penggelapan
+425,"Saya merasa dirugikan karena ada orang yang menyebarkan cerita tidak benar mengenai usaha saya, dan aku nggak tahu harus berbuat apa.",Pencemaran Nama Baik
+426,"Gue ditawarin investasi sama seseorang, katanya untungnya gede banget, tapi uang gue malah nggak balik, padahal gue sudah berusaha menyelesaikannya.",Penipuan dan Penggelapan
+427,"Saya dipukul seseorang ketika mencoba meminta penjelasan tentang masalah kami, semoga ada solusi yang tepat untuk masalah ini.",Penganiayaan
+428,Seseorang mengambil helm saya dari motor yang diparkir di halaman kampus.,Pencurian
+429,Gue terluka setelah seseorang melempar benda keras ke arah gue.,Penganiayaan
+430,"Seseorang menulis komentar yang menuduh saya melakukan perbuatan buruk tanpa bukti, tapi aku masih belum paham harus bagaimana.",Pencemaran Nama Baik
+431,"Saya melihat seseorang menendang dan memukul orang lain saat terjadi keributan, aku ingin tahu apakah kejadian ini bisa dilaporkan.",Penganiayaan
+432,"Aku dipukul mantan teman karena masalah pribadi yang belum selesai, tetapi hasilnya tetap tidak sesuai harapan.",Penganiayaan
+433,"Saya menitipkan uang kepada seseorang, tetapi ketika diminta kembali, dia selalu menghindar, dan gue merasa dirugikan.",Penipuan dan Penggelapan
+434,Nama saya disebut dalam video yang isinya menuduh saya melakukan hal yang tidak benar.,Pencemaran Nama Baik
+435,Gue ditonjok seseorang sampai bibir gue terluka.,Penganiayaan
+436,Kemarin ada orang yang menyerang saya tanpa alasan yang saya pahami.,Penganiayaan
+437,"Gue ikut bisnis yang dijanjikan keuntungan besar, tetapi uang yang disetorkan tidak jelas penggunaannya, sampai sekarang belum ada kejelasan.",Penipuan dan Penggelapan
+438,"Saya dituduh melakukan kecurangan di tempat kerja tanpa penjelasan yang jelas, gue udah mencoba menyelesaikannya baik-baik.",Pencemaran Nama Baik
+439,"Seseorang menulis komentar yang menuduh saya melakukan perbuatan buruk tanpa bukti, dan aku nggak tahu harus berbuat apa.",Pencemaran Nama Baik
+440,"Kemarin saya menyewa kamera melalui akun media sosial, tetapi setelah membayar, barangnya tidak diberikan, saya khawatir kejadian ini terulang lagi.",Penipuan dan Penggelapan
+441,"Aku dipukul seseorang sampai tubuhku terasa sakit dan harus berobat, padahal gue sudah berusaha menyelesaikannya.",Penganiayaan
+442,"Tetangga saya dipukul orang tidak dikenal dan beberapa warga melihat kejadian tersebut, sampai gue stres memikirkan masalah ini.",Penganiayaan
+443,"Seseorang menyebarkan tuduhan tidak benar tentang saya sehingga hubungan saya dengan teman-teman terganggu, aku benar-benar berharap masalah ini segera selesai.",Pencemaran Nama Baik
+444,"Gue dipukul orang asing di jalan, untungnya ada warga yang membantu, saya ingin tahu apakah kejadian ini bisa dilaporkan.",Penganiayaan
+445,Gue jadi bahan gosip setelah seseorang menyebarkan cerita bohong tentang keluarga gue.,Pencemaran Nama Baik
+446,"Sepeda motor saya hilang saat diparkir di depan tempat olahraga, gue cuma pengin masalah ini diselesaikan dengan baik.",Pencurian
+447,Aku dituduh merusak barang milik orang lain padahal aku tidak berada di lokasi saat kejadian.,Pencemaran Nama Baik
+448,"Aku dipukul mantan teman karena masalah pribadi yang belum selesai, aku ingin tahu apakah kejadian ini bisa dilaporkan.",Penganiayaan
+449,"Saya menyewakan laptop kepada kenalan, tetapi setelah masa sewa habis laptop tersebut tidak dikembalikan, saya sudah mencoba mencari informasi sendiri.",Penipuan dan Penggelapan
+450,"Kemarin sepeda motor tetangga hilang ketika diparkir di depan rumah, dan aku ingin tahu apa yang harus dilakukan.",Pencurian
+451,"Gue udah bayar jasa renovasi rumah, tapi pekerjaannya ditinggal dan uang sisanya nggak jelas, saya ingin tahu langkah hukum yang bisa saya ambil.",Penipuan dan Penggelapan
+452,"Saya mengetahui adanya unggahan di media sosial yang berisi tuduhan palsu terhadap saya, gue berharap ada solusi untuk masalah ini.",Pencemaran Nama Baik
+453,"Aku ninggalin tas di perpustakaan sebentar, pas balik tasnya udah dibawa orang.",Pencurian
+454,Teman-teman saya jadi salah paham setelah seseorang menyebarkan cerita yang tidak benar.,Pencemaran Nama Baik
+455,"Perhiasan yang disimpan di kamar hilang setelah rumah ditinggal beberapa jam, saya ingin tahu langkah hukum yang bisa saya ambil.",Pencurian
+456,"Saya membeli tiket konser dari seseorang, tetapi tiket yang dijanjikan tidak pernah diberikan, tapi aku bingung harus bagaimana.",Penipuan dan Penggelapan
+457,"Saya dipukul seseorang ketika mencoba meminta penjelasan tentang masalah kami, saya cuma ingin masalah ini diselesaikan dengan baik.",Penganiayaan
+458,Laptop teman saya diambil seseorang dari meja kelas tanpa izin.,Pencurian
+459,"Aku ditawarin investasi sama kenalan, katanya modal bisa kembali sebulan, tapi sampai sekarang nggak ada kabar, tapi sampai sekarang tetap nggak ada hasil.",Penipuan dan Penggelapan
+460,"Aku udah bayar pesanan dari minggu lalu, tapi penjualnya sekarang malah nggak bisa dihubungi, dan gue merasa dirugikan.",Penipuan dan Penggelapan
+461,"Gue naruh HP di meja, terus pas balik lagi HP-nya udah nggak ada.",Pencurian
+462,"Aku transfer uang ke rekening yang diberikan penjual, tapi setelah itu semua pesan gue cuma dibaca, aku benar-benar kecewa dengan kejadian ini.",Penipuan dan Penggelapan
+463,Teman kerja saya memukul saya ketika kami sedang berselisih soal pekerjaan.,Penganiayaan
+464,"Aku udah bayar uang muka buat pesan meja dan kursi, tapi barangnya nggak pernah selesai dibuat.",Penipuan dan Penggelapan
+465,"Ada orang nyebarin gosip bohong tentang saya di media sosial, saya sudah mencoba menyelesaikannya baik-baik.",Pencemaran Nama Baik
+466,"Gue bayar biaya pendaftaran lomba lewat seseorang, tapi ternyata pendaftaran gue nggak pernah dilakukan, aku benar-benar berharap masalah ini segera selesai.",Penipuan dan Penggelapan
+467,"Teman-teman saya jadi salah paham setelah seseorang menyebarkan cerita yang tidak benar, semoga ada solusi yang tepat untuk masalah ini.",Pencemaran Nama Baik
+468,"Saya dituduh melakukan kecurangan di tempat kerja tanpa penjelasan yang jelas, sampai saya merasa stres memikirkan masalah ini.",Pencemaran Nama Baik
+469,Aku dipukul mantan teman karena masalah pribadi yang belum selesai.,Penganiayaan
+470,"Saya kehilangan barang di ruang ganti dan tidak mengetahui siapa yang mengambilnya, gue merasa kejadian ini nggak adil.",Pencurian
+471,"Saya pesan barang lewat Instagram, setelah uang dikirim akun penjualnya tiba-tiba hilang, saya ingin tahu langkah hukum yang bisa saya ambil.",Penipuan dan Penggelapan
+472,"Foto saya diunggah dengan keterangan yang tidak sesuai dengan kenyataan, aku ingin memastikan tindakan apa yang sebaiknya dilakukan.",Pencemaran Nama Baik
+473,"Aku kirim uang buat biaya administrasi pinjaman, tapi pinjamannya nggak cair dan orangnya menghilang, dan gue pengin tahu apa yang harus dilakukan.",Penipuan dan Penggelapan
+474,Gue dikeroyok waktu keluar dari tempat hiburan dan sampai sekarang masih merasa sakit.,Penganiayaan
+475,"Gue dipukul sama orang yang tiba-tiba marah di tempat parkir, dan gue nggak tahu harus berbuat apa.",Penganiayaan
+476,Saudara saya mengalami pemukulan oleh beberapa orang di dekat rumah.,Penganiayaan
+477,"Saya dituduh melakukan kecurangan di tempat kerja tanpa penjelasan yang jelas, tapi aku bingung harus bagaimana.",Pencemaran Nama Baik
+478,"Gue baru tahu ada postingan yang isinya menjelek-jelekkan gue di internet, gue pengin mendapatkan arahan lebih lanjut.",Pencemaran Nama Baik
+479,"Seseorang menyebarkan informasi yang tidak benar tentang saya melalui grup keluarga, gue udah mencoba menyelesaikannya baik-baik.",Pencemaran Nama Baik
+480,"Aku diminta kirim uang dulu supaya dapat hadiah, tapi setelah transfer hadiahnya nggak pernah ada, aku khawatir kejadian ini terulang lagi.",Penipuan dan Penggelapan
+481,Saya mendapati beberapa barang dagangan hilang dari kios ketika sedang melayani pembeli lain.,Pencurian
+482,"Gue dipukul orang asing di jalan, untungnya ada warga yang membantu, saya sudah mencoba mencari informasi sendiri.",Penganiayaan
+483,"Aku ditendang saat mencoba memisahkan dua orang yang sedang berkelahi, aku berharap masalah ini bisa segera selesai.",Penganiayaan
+484,"Aku tinggalin helm di motor sebentar, balik-balik helmnya udah nggak ada.",Pencurian
+485,"Saya kehilangan barang di ruang ganti dan tidak mengetahui siapa yang mengambilnya, dan saya nggak tahu harus berbuat apa.",Pencurian
+486,"Saya dituduh melakukan kecurangan di tempat kerja tanpa penjelasan yang jelas, saya ingin tahu langkah hukum yang bisa saya ambil.",Pencemaran Nama Baik
+487,"Aku dipukul seseorang sampai tubuhku terasa sakit dan harus berobat, gue udah mencoba mencari informasi sendiri.",Penganiayaan
+488,"Gue naruh HP di meja, terus pas balik lagi HP-nya udah nggak ada, sampai aku merasa stres memikirkan masalah ini.",Pencurian
+489,"Aku transfer uang ke rekening yang diberikan penjual, tapi setelah itu semua pesan gue cuma dibaca, gue takut masalah ini makin besar.",Penipuan dan Penggelapan
+490,"Saya meminjamkan uang kepada kenalan, tetapi dia menyangkal pernah menerima uang tersebut.",Penipuan dan Penggelapan
+491,Aku dikeroyok saat sedang berada di luar rumah bersama teman.,Penganiayaan
+492,"Seseorang menulis unggahan yang menuduh saya melakukan penipuan tanpa menunjukkan bukti, aku ingin mencari jalan keluar dari masalah ini.",Pencemaran Nama Baik
+493,"Gue taruh tas di kursi warung, pas mau pulang tasnya udah hilang, dan aku ingin tahu apa yang harus dilakukan.",Pencurian
+494,Saya merasa reputasi saya rusak setelah muncul unggahan berisi tuduhan yang belum terbukti.,Pencemaran Nama Baik
+495,"Gue lagi naik bus, pas turun HP di kantong ternyata udah nggak ada, saya sudah mencoba mencari informasi sendiri.",Pencurian
+496,Saya diserang secara fisik saat berusaha melerai pertengkaran.,Penganiayaan
+497,Perhiasan yang disimpan di kamar hilang setelah rumah ditinggal beberapa jam.,Pencurian
+498,Aku dipukul berkali-kali oleh seseorang saat sedang berada di depan rumah.,Penganiayaan
+499,"Gue dikeroyok waktu keluar dari tempat hiburan dan sampai sekarang masih merasa sakit, saya berharap ada solusi untuk masalah ini.",Penganiayaan
+500,"Aku baru sadar dompetku diambil orang saat mau membayar belanjaan, gue takut masalah ini makin besar.",Pencurian
