@@ -1,0 +1,14 @@
+﻿[
+  {
+    "id": "contoh-penipuan",
+    "keywords": ["penipuan", "tipu", "transfer", "investasi bodong", "modus"],
+    "question": "Saya menjadi korban penipuan, apa langkah awalnya?",
+    "answer": "Langkah awal: amankan bukti (chat, bukti transfer, identitas pelaku/akun, kronologi), jangan hapus data, dan hindari transfer tambahan. Laporkan ke bank/penyedia layanan terkait bila ada transaksi, lalu konsultasikan dengan pengacara untuk menilai langkah laporan. Jika ada unsur pidana, Anda dapat mempertimbangkan laporan ke kepolisian dengan membawa bukti yang rapi. Kapan kejadian terjadi dan bukti apa yang sudah Anda miliki?"
+  },
+  {
+    "id": "contoh-umum",
+    "keywords": ["hukum", "konsultasi", "pengacara", "lapor"],
+    "question": "Bagaimana cara konsultasi hukum?",
+    "answer": "Tuliskan kronologi singkat (waktu, tempat, pihak terkait), kumpulkan bukti pendukung, lalu pilih pengacara sesuai bidang perkara. Anda bisa menggunakan fitur Cari Pengacara/Konsultasi di HukumIn untuk menjadwalkan sesi. Informasi ini bersifat umum, bukan nasihat hukum resmi."
+  }
+]

@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "_meta": "Dataset gabungan yang bisa diekstrak otomatis dari gabungan dataset.ipynb di folder ini. Notebook memuat 500 baris klasifikasi + 543 baris Indonesian Legal QA saat dijalankan di Colab, tetapi file CSV sumber dan model .pkl ada di Colab/Google Drive (bukan folder backend), dan output notebook hanya menyimpan 5 sampel per tabel (teks bisa terpotong). Untuk jawaban lengkap dari seluruh 1043 data: export df_qa/gabungan dari notebook ke JSON/CSV lalu simpan sebagai data/gabungan-dataset.json (ganti file ini).",
+    "extracted_at": "from-notebook-outputs",
+    "items_count": 15
+  },
+  "data": [
+    {
+      "id": "klas-1",
+      "type": "klasifikasi",
+      "category": "Penganiayaan",
+      "question": "Aku didorong sampai jatuh waktu bertengkar den...",
+      "answer": "Berdasarkan pola laporan, kategori kasus ini cenderung: Penganiayaan. Jelaskan kronologi, waktu kejadian, pihak terkait, dan bukti yang Anda miliki agar analisis lebih tepat.",
+      "source": "gabungan dataset.ipynb (sampel output notebook) - dataset klasifikasi 500 baris, file sumber belum ada di folder backend",
+      "note": "Teks laporan dari output notebook; bisa terpotong (...). Ganti dengan export CSV/JSON lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "klas-2",
+      "type": "klasifikasi",
+      "category": "Penipuan dan Penggelapan",
+      "question": "Gue ditawarin investasi sama seseorang, katany...",
+      "answer": "Berdasarkan pola laporan, kategori kasus ini cenderung: Penipuan dan Penggelapan. Jelaskan kronologi, waktu kejadian, pihak terkait, dan bukti yang Anda miliki agar analisis lebih tepat.",
+      "source": "gabungan dataset.ipynb (sampel output notebook) - dataset klasifikasi 500 baris, file sumber belum ada di folder backend",
+      "note": "Teks laporan dari output notebook; bisa terpotong (...). Ganti dengan export CSV/JSON lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "klas-3",
+      "type": "klasifikasi",
+      "category": "Pencurian",
+      "question": "Saya kehilangan kamera saat berwisata dan mend...",
+      "answer": "Berdasarkan pola laporan, kategori kasus ini cenderung: Pencurian. Jelaskan kronologi, waktu kejadian, pihak terkait, dan bukti yang Anda miliki agar analisis lebih tepat.",
+      "source": "gabungan dataset.ipynb (sampel output notebook) - dataset klasifikasi 500 baris, file sumber belum ada di folder backend",
+      "note": "Teks laporan dari output notebook; bisa terpotong (...). Ganti dengan export CSV/JSON lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "klas-4",
+      "type": "klasifikasi",
+      "category": "Pencemaran Nama Baik",
+      "question": "Aku malu karena ada orang yang menyebarkan kab...",
+      "answer": "Berdasarkan pola laporan, kategori kasus ini cenderung: Pencemaran Nama Baik. Jelaskan kronologi, waktu kejadian, pihak terkait, dan bukti yang Anda miliki agar analisis lebih tepat.",
+      "source": "gabungan dataset.ipynb (sampel output notebook) - dataset klasifikasi 500 baris, file sumber belum ada di folder backend",
+      "note": "Teks laporan dari output notebook; bisa terpotong (...). Ganti dengan export CSV/JSON lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "klas-5",
+      "type": "klasifikasi",
+      "category": "Penipuan dan Penggelapan",
+      "question": "Saya membayar biaya pendaftaran pekerjaan, tet...",
+      "answer": "Berdasarkan pola laporan, kategori kasus ini cenderung: Penipuan dan Penggelapan. Jelaskan kronologi, waktu kejadian, pihak terkait, dan bukti yang Anda miliki agar analisis lebih tepat.",
+      "source": "gabungan dataset.ipynb (sampel output notebook) - dataset klasifikasi 500 baris, file sumber belum ada di folder backend",
+      "note": "Teks laporan dari output notebook; bisa terpotong (...). Ganti dengan export CSV/JSON lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "qa-6",
+      "type": "legal_qa",
+      "category": "Penganiayaan",
+      "question": "Dalam beberapa waktu terakhir, sering terjadi ...",
+      "answer": "Pada dasarnya menyampaikan unjuk rasa atau dem... (Rujukan: https://www.hukumonline.com/klinik/a/apakah-po...)",
+      "keywords": [
+        "Penganiayaan"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/apakah-po...",
+      "note": "Question/Answer/link dari output notebook; bisa terpotong (...). Ganti dengan export dataset lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "qa-7",
+      "type": "legal_qa",
+      "category": "Pencurian; Penganiayaan; Pencemaran Nama Baik",
+      "question": "Saya baca dalam sebuah berita beberapa waktu l...",
+      "answer": "Penangkapan adalah suatu tindakan penyidik ber... (Rujukan: https://www.hukumonline.com/klinik/a/dipaksa-m...)",
+      "keywords": [
+        "Pencurian",
+        "Penganiayaan",
+        "Pencemaran Nama Baik"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/dipaksa-m...",
+      "note": "Question/Answer/link dari output notebook; bisa terpotong (...). Ganti dengan export dataset lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "qa-8",
+      "type": "legal_qa",
+      "category": "Penipuan dan Penggelapan",
+      "question": "Langkah hukum seperti apa yang dapat komisaris...",
+      "answer": "Dalam hal salah seorang anggota direksi melaku... (Rujukan: https://www.hukumonline.com/klinik/a/pidana-un...)",
+      "keywords": [
+        "Penipuan dan Penggelapan"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/pidana-un...",
+      "note": "Question/Answer/link dari output notebook; bisa terpotong (...). Ganti dengan export dataset lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "qa-9",
+      "type": "legal_qa",
+      "category": "Penipuan dan Penggelapan; Pencemaran Nama Baik",
+      "question": "Saya bekerja di sebuah perusahan swasta sekali...",
+      "answer": "Sesuai ketentuan sesuai [UU PT](https://www.hu... (Rujukan: https://www.hukumonline.com/klinik/a/demonstra...)",
+      "keywords": [
+        "Penipuan dan Penggelapan",
+        "Pencemaran Nama Baik"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/demonstra...",
+      "note": "Question/Answer/link dari output notebook; bisa terpotong (...). Ganti dengan export dataset lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "qa-10",
+      "type": "legal_qa",
+      "category": "Pencurian",
+      "question": "Bagaimana penerapan hukum pidana menurut UU Pe...",
+      "answer": "Menjawab pertanyaan soal penenggelaman kapal a... (Rujukan: https://www.hukumonline.com/klinik/a/dasar-huk...)",
+      "keywords": [
+        "Pencurian"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/dasar-huk...",
+      "note": "Question/Answer/link dari output notebook; bisa terpotong (...). Ganti dengan export dataset lengkap untuk hasil maksimal."
+    },
+    {
+      "id": "qares-11",
+      "type": "legal_qa",
+      "category": "Penganiayaan",
+      "question": "Dear Bung Pokrol. Mohon penjelasan lebih jauh ...",
+      "answer": "Pertanyaan terkait: Batasan Penganiayaan Ringan. Untuk penjelasan lengkap, lihat sumber rujukan.",
+      "keywords": [
+        "Penganiayaan"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/pasal-352...",
+      "note": "Baris dari output uji pencarian notebook; bisa terpotong (...)."
+    },
+    {
+      "id": "qares-12",
+      "type": "legal_qa",
+      "category": "Penganiayaan",
+      "question": "Saya akan menceritakan kronologis di kos yang ...",
+      "answer": "Pertanyaan terkait: Hukumnya Jika Berkelahi karena Rebutan Pacar. Untuk penjelasan lengkap, lihat sumber rujukan.",
+      "keywords": [
+        "Penganiayaan"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/hukumnya-...",
+      "note": "Baris dari output uji pencarian notebook; bisa terpotong (...)."
+    },
+    {
+      "id": "qares-13",
+      "type": "legal_qa",
+      "category": "Penganiayaan",
+      "question": "Assalamualaikum, saya ingin menanyakan apakah ...",
+      "answer": "Pertanyaan terkait: Hukum Duel Satu Lawan Satu. Untuk penjelasan lengkap, lihat sumber rujukan.",
+      "keywords": [
+        "Penganiayaan"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/hukum-due...",
+      "note": "Baris dari output uji pencarian notebook; bisa terpotong (...)."
+    },
+    {
+      "id": "qares-14",
+      "type": "legal_qa",
+      "category": "Penganiayaan",
+      "question": "Bila ada seseorang yang memasuki rumah kita de...",
+      "answer": "Pertanyaan terkait: Sanksi Pidana Memasuki Rumah Orang Lain dengan.... Untuk penjelasan lengkap, lihat sumber rujukan.",
+      "keywords": [
+        "Penganiayaan"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/sanksi-pi...",
+      "note": "Baris dari output uji pencarian notebook; bisa terpotong (...)."
+    },
+    {
+      "id": "qares-15",
+      "type": "legal_qa",
+      "category": "Pencurian",
+      "question": "1. Bolehkah memberikan sanksi denda 10 kali li...",
+      "answer": "Pertanyaan terkait: Bolehkah Korban Menerapkan Denda 10 Kali Harga.... Untuk penjelasan lengkap, lihat sumber rujukan.",
+      "keywords": [
+        "Pencurian"
+      ],
+      "source": "https://www.hukumonline.com/klinik/a/memberika...",
+      "note": "Baris dari output uji pencarian notebook; bisa terpotong (...)."
+    }
+  ]
+}

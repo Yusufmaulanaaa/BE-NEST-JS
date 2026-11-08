@@ -1,0 +1,52 @@
+{
+  "name": "hukumin-backend",
+  "version": "1.0.0",
+  "description": "HukumIn REST API (NestJS)",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "nest build",
+    "start": "node dist/main",
+    "start:dev": "nest start --watch",
+    "start:prod": "node dist/main",
+    "test:e2e": "jest --config ./test/jest-e2e.json --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": "true",
+  "dependencies": {
+    "@nestjs/common": "^11.2.8",
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.2.8",
+    "@nestjs/jwt": "^11.0.2",
+    "@nestjs/platform-express": "^11.2.8",
+    "@nestjs/swagger": "^11.4.8",
+    "@nestjs/throttler": "^6.7.1",
+    "@nestjs/typeorm": "^11.0.3",
+    "bcryptjs": "^3.0.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "helmet": "^8.3.0",
+    "pg": "^8.23.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "sql.js": "^1.15.2",
+    "typeorm": "^0.3.31"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.24",
+    "@nestjs/schematics": "^11.1.0",
+    "@nestjs/testing": "^11.2.8",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^26.6.6",
+    "@types/sql.js": "^1.4.11",
+    "@types/supertest": "^7.2.1",
+    "jest": "^29.7.0",
+    "supertest": "^7.3.2",
+    "ts-jest": "^29.4.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
