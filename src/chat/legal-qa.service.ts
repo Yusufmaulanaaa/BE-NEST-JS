@@ -14,10 +14,14 @@ import { isAbsolute, join, resolve } from 'path';
  *     regression dengan feature TF-IDF yang sama, hasil praktis identik)
  *   - cosine_similarity + BATAS_KEMIRIPAN = 0.02
  *
+ * Retrieval ditingkatkan: pencarian dibobot (title/Question > Answer), exact/phrase
+ * match, dan fallback global agar pertanyaan spesifik selalu mengenai entri QA paling tepat.
+ *
  * File CSV asli dibaca otomatis dari folder `data/` (lihat data/README.md).
  */
 
 export interface QaRow {
+  id: string;
   title: string;
   link: string;
   question: string;
@@ -25,6 +29,11 @@ export interface QaRow {
   /** kategori bisa berisi lebih dari satu label, dipisah tanda titik koma ";" */
   categories: string[];
   searchText: string;
+  normTitle: string;
+  normQuestion: string;
+  normAnswer: string;
+  normAll: string;
+  tokenSet: Set<string>;
 }
 
 export interface ClassificationRow {
@@ -80,7 +89,7 @@ export class LegalQaService implements OnModuleInit {
   private classificationRows: ClassificationRow[] = [];
   private categories: string[] = [];
 
-  // Indeks TF-IDF untuk pencarian kemiripan.
+  // Indeks TF-IDF untuk pencarian kemiripan (dibobot per field: title/question/answer).
   private qaIdf = new Map<string, number>();
   private qaVectors: Array<Map<string, number>> = [];
   // Indeks TF-IDF + bobot klasifikasi.
@@ -88,6 +97,7 @@ export class LegalQaService implements OnModuleInit {
   private clsWeights: number[][] = [];
   private clsLabels: string[] = [];
   private termIndex = new Map<string, number>();
+  private debug = false;
 
   private qaPath = '';
   private classificationPath = '';
@@ -139,6 +149,7 @@ export class LegalQaService implements OnModuleInit {
   reload() {
     this.threshold = this.numConfig('CHAT_SIMILARITY_THRESHOLD', DEFAULT_THRESHOLD, 0, 1);
     this.answerMaxChars = this.numConfig('CHAT_ANSWER_MAX_CHARS', 1500, 200, 20000);
+    this.debug = /^(1|true|yes)$/i.test(String(this.config.get<string>('CHAT_DEBUG') || '').trim());
 
     const qaFile = this.findQaFile();
     if (qaFile) {
@@ -190,122 +201,65 @@ export class LegalQaService implements OnModuleInit {
     this.loadedAt = Date.now();
   }
 
-  // ── Inti: port fungsi chatbot() dari notebook ─────────────
+  // -- Jawab dari dataset (retrieval dibobot + fallback klasifikasi) --
   answer(message: string): LegalQaResult {
     const pesan = String(message ?? '').trim();
-    if (!pesan) {
-      return {
-        reply: 'Silakan ceritakan masalah hukum yang ingin kamu konsultasikan.',
-        intent: 'kosong',
-        category: null,
-        score: 0,
-        link: null,
-        question: null,
-        hits: [],
-      };
-    }
-
+    if (!pesan) return { reply: 'Silakan ceritakan masalah hukum yang ingin kamu konsultasikan.', intent: 'kosong', category: null, score: 0, link: null, question: null, hits: [] };
     const intent = this.detectIntent(pesan);
-    if (intent === 'sapaan') {
-      return {
-        reply:
-          'Halo! Selamat datang di layanan konsultasi hukum awal.\n\n' +
-          'Kamu bisa menceritakan masalah hukum atau menanyakan informasi hukum yang ingin kamu ketahui.',
-        intent,
-        category: null,
-        score: 0,
-        link: null,
-        question: null,
-        hits: [],
-      };
-    }
-    if (intent === 'konsultasi') {
-      return {
-        reply:
-          'Tentu, saya siap membantu kamu memulai konsultasi hukum.\n\n' +
-          'Kamu bisa:\n' +
-          '1. Menceritakan masalah hukum yang sedang kamu hadapi.\n' +
-          '2. Meminta informasi mengenai advokat atau LBH.\n\n' +
-          'Ceritakan kebutuhanmu terlebih dahulu.',
-        intent,
-        category: null,
-        score: 0,
-        link: null,
-        question: null,
-        hits: [],
-      };
-    }
-    if (intent === 'rekomendasi_advokat') {
-      return {
-        reply:
-          'Saya bisa membantu mengarahkan pencarian bantuan hukum.\n\n' +
-          'Saat ini direktori advokat dan LBH belum terhubung ke sistem, sehingga saya belum bisa memberikan ' +
-          'rekomendasi nama atau kontak yang terverifikasi.',
-        intent,
-        category: null,
-        score: 0,
-        link: null,
-        question: null,
-        hits: [],
-      };
-    }
-
-    if (!this.qaRows.length) {
-      return {
-        reply:
-          'Dataset hukum lokal belum tersedia di server, jadi saya belum bisa menjawab pertanyaan ini. ' +
-          'Silakan coba lagi nanti atau hubungi pengacara HukumIn.',
-        intent,
-        category: null,
-        score: 0,
-        link: null,
-        question: null,
-        hits: [],
-      };
-    }
+    if (intent === 'sapaan') return { reply: 'Halo! Selamat datang di layanan konsultasi hukum awal.\n\nKamu bisa menceritakan masalah hukum atau menanyakan informasi hukum yang ingin kamu ketahui.', intent, category: null, score: 0, link: null, question: null, hits: [] };
+    if (intent === 'konsultasi') return { reply: 'Tentu, saya siap membantu kamu memulai konsultasi hukum.\n\nKamu bisa:\n1. Menceritakan masalah hukum yang sedang kamu hadapi.\n2. Meminta informasi mengenai advokat atau LBH.\n\nCeritakan kebutuhanmu terlebih dahulu.', intent, category: null, score: 0, link: null, question: null, hits: [] };
+    if (intent === 'rekomendasi_advokat') return { reply: 'Saya bisa membantu mengarahkan pencarian bantuan hukum.\n\nSaat ini direktori advokat dan LBH belum terhubung ke sistem, sehingga saya belum bisa memberikan rekomendasi nama atau kontak yang terverifikasi.', intent, category: null, score: 0, link: null, question: null, hits: [] };
+    if (!this.qaRows.length) return { reply: 'Dataset hukum lokal belum tersedia di server, jadi saya belum bisa menjawab pertanyaan ini. Silakan coba lagi nanti atau hubungi pengacara HukumIn.', intent, category: null, score: 0, link: null, question: null, hits: [] };
 
     const category = this.predictCategory(pesan);
     const hits = this.search(pesan, category);
     const best = hits[0];
 
     if (!best || best.score < this.threshold) {
-      const label = category ? `Kategori sementara: ${category}\n\n` : '';
-      return {
-        reply:
-          `${label}Saya belum menemukan penjelasan hukum yang cukup relevan dengan cerita kamu.\n\n` +
-          'Agar saya bisa membantu lebih tepat, ceritakan:\n' +
-          '1. Bagaimana kronologi kejadian?\n' +
-          '2. Kapan dan di mana kejadian berlangsung?\n' +
-          '3. Siapa saja yang terlibat?\n' +
-          '4. Apakah terdapat saksi atau bukti?',
-        intent,
-        category,
-        score: best?.score ?? 0,
-        link: null,
-        question: null,
-        hits,
-      };
+      const cls = this.bestClassificationMatch(pesan);
+      if (cls) {
+        const alt = this.search(pesan + ' ' + cls.category, null).find((h) => h.row.categories.some((c) => c.toLowerCase().includes(cls.category.toLowerCase())));
+        const steps = this.categorySteps(cls.category);
+        const src = alt ? ('\n\nRujukan terkait (dataset Legal QA):\n' + alt.row.question + '\n' + this.trimAnswer(alt.row.answer, 700) + '\nSumber: ' + (alt.row.link || '-')) : '';
+        return { reply: 'Kategori perkiraan (dari dataset klasifikasi): ' + cls.category + '\n\nLaporan/kasus serupa: ' + cls.text + '\n\n' + steps + src + '\n\nCatatan: Informasi umum dari dataset HukumIn, bukan nasihat hukum resmi.', intent, category: cls.category, score: alt?.score ?? 0.01, link: alt?.row.link ?? null, question: alt?.row.question ?? cls.text, hits: alt ? [alt] : hits };
+      }
+      const label = category ? ('Kategori sementara: ' + category + '\n\n') : '';
+      return { reply: label + 'Saya belum menemukan penjelasan hukum yang cukup relevan di dataset untuk pertanyaan ini.\n\nAgar saya bisa membantu lebih tepat, ceritakan:\n1. Kronologi kejadian\n2. Waktu dan tempat\n3. Pihak yang terlibat\n4. Bukti/saksi yang ada', intent, category, score: best?.score ?? 0, link: null, question: null, hits };
     }
 
-    const answer = this.trimAnswer(best.row.answer, this.answerMaxChars);
+      const answer = this.trimAnswer(best.row.answer, this.answerMaxChars);
+    const rowCategory = best.row.categories[0] ?? category ?? '-';
     const reply =
-      `Kategori hasil klasifikasi: ${category ?? best.row.categories[0] ?? '-'}\n\n` +
-      `Pertanyaan terkait:\n${best.row.question}\n\n` +
-      `Penjelasan hukum:\n${answer}\n\n` +
-      `Sumber: ${best.row.link || '-'}\n` +
-      `Skor kemiripan: ${best.score.toFixed(3)}\n\n` +
-      'Catatan: Jawaban ini diambil dari dataset Legal QA berdasarkan kemiripan teks. ' +
-      'Informasi ini merupakan konsultasi awal dan bukan pengganti nasihat advokat.';
+      'Kategori: ' + rowCategory + '\n\n' +
+      'Pertanyaan terkait:\n' + (best.row.title ? best.row.title + '\n' : '') + best.row.question + '\n\n' +
+      'Jawaban (berdasarkan dataset HukumIn):\n' + answer + '\n\n' +
+      'Sumber: ' + (best.row.link || '-') + '\n' +
+      'Skor kemiripan: ' + best.score.toFixed(3) + '\n\n' +
+      'Catatan: Jawaban ini diambil dari dataset Legal QA HukumIn (543 QA + 500 klasifikasi) berdasarkan kemiripan pertanyaan/laporan Anda. Informasi ini bersifat umum, bukan pengganti nasihat advokat.';
+    return { reply, intent, category: rowCategory, score: best.score, link: best.row.link || null, question: best.row.question, hits };
+  }
 
-    return {
-      reply,
-      intent,
-      category,
-      score: best.score,
-      link: best.row.link || null,
-      question: best.row.question,
-      hits,
-    };
+  private bestClassificationMatch(text: string): ClassificationRow | null {
+    if (!this.classificationRows.length) return null;
+    const q = new Set(this.queryTokens(this.normalize(text)));
+    if (!q.size) return null;
+    let best: { row: ClassificationRow; s: number } | null = null;
+    for (const row of this.classificationRows) {
+      const toks = this.tokenize(row.text);
+      let s = 0;
+      for (const t of toks) if (q.has(t)) s += t.length >= 5 ? 2 : 1;
+      if (!best || s > best.s) best = { row, s };
+    }
+    return best && best.s >= 2 ? best.row : null;
+  }
+
+  private categorySteps(category: string): string {
+    const c = (category || '').toLowerCase();
+    if (c.includes('penganiayaan')) return 'Langkah umum (pidana penganiayaan): 1) Utamakan keselamatan & berobat/visum jika ada luka. 2) Kumpulkan bukti (foto luka, kronologi, identitas saksi/pelaku, CCTV). 3) Lapor ke kepolisian (SPKT) dengan bukti. 4) Konsultasi advokat/posbakum untuk pendampingan.';
+    if (c.includes('penipuan') || c.includes('penggelapan')) return 'Langkah umum (penipuan/penggelapan): 1) Kumpulkan bukti (chat, bukti transfer, invoice, identitas/akun pelaku, kronologi). 2) Lapor ke kepolisian/cyber crime bila elektronik. 3) Hubungi bank/platform untuk pembekuan/penelusuran sesuai ketentuan. 4) Konsultasi advokat bila kerugian besar.';
+    if (c.includes('pencurian')) return 'Langkah umum (pencurian): 1) Amankan lokasi & bukti (CCTV, saksi, daftar barang). 2) Segera lapor polisi dengan identitas dan kronologi. 3) Simpan bukti kepemilikan bila ada. 4) Konsultasi advokat bila diperlukan.';
+    if (c.includes('pencemaran')) return 'Langkah umum (pencemaran nama baik/fitnah): 1) Simpan bukti (tangkapan layar, tautan, waktu, akun). 2) Hindari menyebarluaskan balik. 3) Pertimbangkan somasi/laporan sesuai UU ITE/KUHP dengan bantuan advokat. 4) Konsultasi advokat untuk menilai unsur pidana/perdata.';
+    return 'Langkah umum: 1) Tulis kronologi jelas (waktu, tempat, pihak). 2) Kumpulkan bukti/saksi. 3) Lapor pihak berwenang bila ada dugaan pidana. 4) Konsultasi advokat HukumIn untuk langkah tepat.';
   }
 
   /** Konteks ringkas untuk AI eksternal (3 hit teratas). */
@@ -316,9 +270,9 @@ export class LegalQaService implements OnModuleInit {
     const lines = hits.map((h, i) => {
       const head = (h.row.title || h.row.question).trim();
       const body = this.trimAnswer(h.row.answer, 900);
-      return `${i + 1}. ${head}\nJawaban rujukan: ${body}${h.row.link ? `\nSumber: ${h.row.link}` : ''}`;
+      return `${i + 1}. [${h.row.categories[0] ?? 'Umum'}] ${head}\nPertanyaan: ${h.row.question}\nJawaban rujukan: ${body}${h.row.link ? `\nSumber: ${h.row.link}` : ''}`;
     });
-    return `Konteks dataset lokal HukumIn (gunakan sebagai rujukan utama; jangan mengarang fakta baru):\n${lines.join('\n\n')}`;
+    return `Konteks dataset lokal HukumIn (gunakan sebagai rujukan utama; jawab sesuai data ini; jangan mengarang fakta/pasal baru):\n${lines.join('\n\n')}`;
   }
 
   // ── Deteksi intent (port deteksi_intent) ──────────────────
@@ -370,37 +324,97 @@ export class LegalQaService implements OnModuleInit {
     return this.clsLabels[best] ?? null;
   }
 
-  // ── Pencarian kemiripan (port cosine_similarity) ──────────
-  private search(text: string, category: string | null): DatasetHit[] {
-    const query = this.transform(text, this.qaIdf);
-    const scored: DatasetHit[] = [];
+  // ── Pencarian kemiripan (TF-IDF + lexical/phrase boost, fallback global) ──
+  private search(text: string, predictedCategory: string | null): DatasetHit[] {
+    const queryNorm = this.normalize(text);
+    const queryTokens = this.queryTokens(queryNorm);
+    if (!queryTokens.length) return this.qaRows.slice(0, 5).map((row) => ({ row, score: 0 }));
+
+    const queryVec = this.transform(text, this.qaIdf);
+    const scored: Array<{ row: QaRow; score: number; base: number }> = [];
+
     for (let i = 0; i < this.qaRows.length; i++) {
       const row = this.qaRows[i];
-      if (
-        category &&
-        !row.categories.some((c) => c.trim().toLowerCase() === category.trim().toLowerCase())
-      ) {
-        continue;
-      }
-      let score = 0;
+      let base = 0;
       const vec = this.qaVectors[i];
-      for (const [term, value] of query) {
+      for (const [term, value] of queryVec) {
         const other = vec.get(term);
-        if (other !== undefined) score += value * other;
+        if (other !== undefined) base += value * other;
       }
-      scored.push({ row, score });
+
+      // Lexical boosts: prioritaskan Title/Question (tempat pertanyaan user paling cocok).
+      let boost = 0;
+      if (row.normQuestion && (queryNorm.includes(row.normQuestion) || row.normQuestion.includes(queryNorm))) boost += 2.2;
+      if (row.normTitle && (queryNorm.includes(row.normTitle) || row.normTitle.includes(queryNorm))) boost += 1.6;
+
+      let qHits = 0;
+      let tHits = 0;
+      let uniq = 0;
+      for (const tok of queryTokens) {
+        const hitQ = row.normQuestion.includes(tok);
+        const hitT = row.normTitle.includes(tok);
+        const hitA = row.normAnswer.includes(tok) || row.tokenSet.has(tok);
+        if (hitQ) qHits++;
+        if (hitT) tHits++;
+        if (hitQ || hitT || hitA) {
+          uniq++;
+          boost += tok.length >= 5 ? 0.05 : 0.022;
+          if (hitQ) boost += 0.09;
+          if (hitT) boost += 0.06;
+          if (!hitQ && !hitT && hitA) boost += 0.01;
+        }
+      }
+      const coverage = uniq / Math.max(1, queryTokens.length);
+      boost += coverage * 0.75;
+      if (qHits >= Math.min(3, queryTokens.length) && queryTokens.length >= 2) boost += 0.5;
+      if (tHits >= Math.min(3, queryTokens.length) && queryTokens.length >= 2) boost += 0.32;
+      if (qHits === 0 && tHits === 0 && base < 0.08) boost -= 0.18;
+
+      // Intent-aware topical boosts (lebih spesifik ke maksud pertanyaan umum user).
+      const has = (re: RegExp) => re.test(queryNorm);
+      const rowHas = (re: RegExp) => re.test(row.normTitle) || re.test(row.normQuestion);
+      if (has(/marketplace|transfer|tertipu|penipuan/) && (has(/online|marketplace|transfer/) || rowHas(/penipuan.*online|jual beli.*online|pasal penipuan online|tertipu/))) {
+        if (rowHas(/pasal penipuan.*online|menjerat pelaku/)) boost += 0.95;
+        if (rowHas(/panduan.*melaporkan penipuan.*online|melaporkan penipuan.*online/)) boost += 0.9;
+        if (rowHas(/penipuan.*online|jual beli.*online|cara penyidik.*penipuan|tertipu/)) boost += 0.85;
+        if (rowHas(/vcs|kencan online|mobil.*luar negeri/) && !has(/vcs|kencan|mobil|luar negeri/)) boost -= 0.5;
+      }
+      if (has(/titipan|tidak dikembalikan/) && rowHas(/titipan|tidak.*mengembalikan|pinjam pakai.*penggelapan|penggelapan|barang.*dikembalikan/)) boost += 0.95;
+      if (has(/motor|kendaraan bermotor/) && has(/curi|dicuri|pencurian/)) {
+        if (rowHas(/motor|kendaraan bermotor|pencurian.*motor|sepeda motor/)) boost += 1.05;
+        if (has(/tetangga/) && rowHas(/air pam|air dicuri/) && !rowHas(/motor|kendaraan/)) boost -= 0.8;
+      }
+      if (has(/pelecehan seksual|tindak pidana seksual|kekerasan seksual/)) {
+        if (rowHas(/pelecehan seksual|tindak pidana kekerasan seksual|kekerasan seksual|uu tpks/)) boost += 1.15;
+        if (has(/kerja|tempat kerja/) && rowHas(/kerja|tempat kerja|perusahaan|karyawan|atasan/)) boost += 0.4;
+        if (has(/kerja|tempat kerja/) && rowHas(/spill.*identitas|medsos|media sosial/) && !rowHas(/kerja|tempat kerja/)) boost -= 0.2;
+      }
+
+      // Bonus kategori prediksi (soft, bukan hard filter) + penalti mismatch halus.
+      if (predictedCategory) {
+        const matchCat = row.categories.some((c) => c.trim().toLowerCase() === predictedCategory.trim().toLowerCase() || c.toLowerCase().includes(predictedCategory.toLowerCase()));
+        boost += matchCat ? 0.07 : -0.03;
+      }
+
+      const score = base + boost;
+      if (score > 0.015 || uniq > 0) scored.push({ row, score, base });
     }
-    scored.sort((a, b) => b.score - a.score);
-    return scored.slice(0, 5);
+
+    scored.sort((a, b) => b.score - a.score || b.base - a.base);
+    const top = scored.slice(0, 8);
+    if (this.debug && top[0]) {
+      this.logger.debug(`QA hit: [${top[0].row.categories[0] ?? '-'}] score=${top[0].score.toFixed(3)} base=${top[0].base.toFixed(3)} q="${top[0].row.question.slice(0, 90)}"`);
+    }
+    return top.map(({ row, score }) => ({ row, score }));
   }
 
-  // ── TF-IDF (port TfidfVectorizer lowercase, ngram (1,2), sublinear_tf) ──
+  // ── TF-IDF (dibobot: title x4, question x4, answer x1) ──
   private buildQaIndex() {
     this.qaIdf = new Map();
     this.qaVectors = [];
     if (!this.qaRows.length) return;
 
-    const docs = this.qaRows.map((r) => this.tokenize(r.searchText));
+    const docs = this.qaRows.map((r) => this.weightedQaTokens(r));
     const df = new Map<string, number>();
     for (const tokens of docs) {
       for (const term of new Set(tokens)) df.set(term, (df.get(term) ?? 0) + 1);
@@ -410,6 +424,13 @@ export class LegalQaService implements OnModuleInit {
       this.qaIdf.set(term, Math.log((1 + n) / (1 + count)) + 1);
     }
     this.qaVectors = docs.map((tokens) => this.vectorize(tokens, this.qaIdf));
+  }
+
+  private weightedQaTokens(r: QaRow): string[] {
+    const tq = this.tokenize(r.title);
+    const qq = this.tokenize(r.question);
+    const aq = this.tokenize(r.answer).slice(0, 1200); // batasi answer panjang agar title/question dominan
+    return [...tq, ...tq, ...tq, ...tq, ...qq, ...qq, ...qq, ...qq, ...aq];
   }
 
   private buildClassifier() {
@@ -492,6 +513,35 @@ export class LegalQaService implements OnModuleInit {
       if (i + 1 < words.length) grams.push(`${words[i]} ${words[i + 1]}`);
     }
     return grams;
+  }
+
+  private normalize(text: string): string {
+    return this.tokenize(text)
+      .filter((t) => !t.includes(' '))
+      .join(' ');
+  }
+
+  private queryTokens(norm: string): string[] {
+    const stop = new Set(['yang', 'dan', 'di', 'ke', 'dari', 'untuk', 'dengan', 'pada', 'atau', 'itu', 'ini', 'saya', 'aku', 'kami', 'kita', 'apa', 'apakah', 'bagaimana', 'bisa', 'dapat', 'bolehkah', 'jika', 'bila', 'karena', 'oleh', 'ada', 'tidak', 'tak', 'sudah', 'belum', 'akan', 'harus', 'kasus', 'hukum', 'langkah', 'termasuk', 'tentang', 'secara', 'waktu', 'saat', 'sampai', 'terus', 'hingga', 'lalu', 'kemudian', 'sebuah', 'suatu', 'orang', 'dilakukan', 'melakukan']);
+    const base = norm.split(/\s+/).filter((t) => t.length > 1 && !stop.has(t));
+    const expanded = new Set(base);
+    const raw = norm;
+    const add = (...xs: string[]) => xs.forEach((x) => expanded.add(x));
+    if (/marketplace|tokopedia|shopee|bukalapak|olshop|online shop|toko online|jual beli online|e commerce|ecommerce/.test(raw)) add('penipuan', 'online', 'transaksi', 'korban', 'lapor', 'marketplace', 'pidana', 'pasal', 'menjerat', 'jual', 'beli');
+    if (/transfer|rekening|dana|ovo|gopay|pembayaran|bayar/.test(raw)) add('transfer', 'uang', 'penipuan', 'lapor', 'online');
+    if (/tertipu|ditipu|penipuan|scam|modus/.test(raw)) add('penipuan', 'tertipu', 'lapor', 'pidana', 'online');
+    if (/didorong|dipukul|ditampar|dianiaya|dikeroyok|ditendang|memukul|penganiayaan|luka|pukul|tendang|aniaya/.test(raw)) add('penganiayaan', 'pidana', 'lapor', 'visum', 'kekerasan', 'memukul');
+    if (/bertengkar|ribut|tetangga/.test(raw)) add('penganiayaan', 'lapor', 'tetangga');
+    if (/titipan|tidak dikembalikan|barang tidak kembali|pinjam tidak kembali|dipinjam tidak dikembalikan|barang titipan/.test(raw)) add('penggelapan', 'titipan', 'barang', 'pidana', 'lapor', 'mengganti', 'dikembalikan', 'pinjam');
+    if (/digelapkan|penggelapan/.test(raw)) add('penggelapan', 'pidana', 'lapor', 'barang');
+    if (/dicuri|pencurian|\bcuri\b|maling|hilang dicuri|kemalingan/.test(raw)) add('pencurian', 'curi', 'lapor', 'pidana', 'barang', 'bukti');
+    if (/motor|kendaraan bermotor|sepeda motor|mobil/.test(raw)) add('motor', 'pencurian', 'kendaraan', 'bermotor', 'curi');
+    if (/fitnah|difitnah|pencemaran|nama baik|hinaan|hujat|menyebarkan|medsos|media sosial/.test(raw)) add('pencemaran', 'nama', 'baik', 'fitnah', 'lapor', 'uu', 'ite', 'media', 'sosial');
+    if (/pelecehan|seksual|tpk?s|kekerasan seksual/.test(raw)) add('pelecehan', 'seksual', 'lapor', 'pidana', 'tindak', 'kekerasan', 'kerja');
+    if (/kdrt|kekerasan dalam rumah tangga/.test(raw)) add('kdrt', 'kekerasan', 'rumah', 'tangga', 'lapor');
+    if (/wanprestasi|utang piutang|perjanjian|kontrak/.test(raw)) add('wanprestasi', 'perdata', 'perjanjian');
+    if (/ancaman|mengancam|diperas|pemerasan/.test(raw)) add('ancaman', 'pidana', 'lapor');
+    return [...expanded].filter((t) => t.length > 1).slice(0, 36);
   }
 
   /** TF-IDF sublinear (1 + ln tf) * idf, lalu L2 normalisasi. */
@@ -607,12 +657,12 @@ export class LegalQaService implements OnModuleInit {
   }
 
   private loadQaFile(file: string): QaRow[] {
-    const raw = readFileSync(file, 'utf8').replace(/^﻿/, '');
+    const raw = readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
     if (/\.json$/i.test(file)) {
       const parsed = JSON.parse(raw);
       const arr = Array.isArray(parsed) ? parsed : (parsed as any)?.items ?? (parsed as any)?.data ?? [];
       return arr
-        .map((x: any): QaRow | null => {
+        .map((x: any, i: number): QaRow | null => {
           if (!x || typeof x !== 'object') return null;
           const question = this.clean(x.question ?? x.Question ?? x.pertanyaan ?? x.prompt ?? '');
           const answer = this.clean(x.answer ?? x.Answer ?? x.jawaban ?? '');
@@ -620,14 +670,7 @@ export class LegalQaService implements OnModuleInit {
           const categories = this.splitCategories(x.kategori ?? x.category ?? x.kategori_set ?? '');
           const title = this.clean(x.title ?? x.Title ?? '');
           const link = this.clean(x.link ?? x.Link ?? x.source ?? '');
-          return {
-            title,
-            link,
-            question: question || answer.slice(0, 120),
-            answer: answer || question,
-            categories,
-            searchText: `${title} ${question} ${answer}`,
-          };
+          return this.makeRow(String(x.id ?? `qa-${i + 1}`), title, link, question || answer.slice(0, 120), answer || question, categories);
         })
         .filter((x: QaRow | null): x is QaRow => !!x);
     }
@@ -658,16 +701,30 @@ export class LegalQaService implements OnModuleInit {
       const title = iTitle >= 0 ? this.clean(row[iTitle] ?? '') : '';
       const link = iLink >= 0 ? this.clean(row[iLink] ?? '') : '';
       const categories = iCategory >= 0 ? this.splitCategories(row[iCategory] ?? '') : [];
-      out.push({
-        title,
-        link,
-        question: question || answer.slice(0, 120),
-        answer: answer || question,
-        categories,
-        searchText: `${title} ${question} ${answer}`,
-      });
+      out.push(this.makeRow(`qa-${r}`, title, link, question || answer.slice(0, 120), answer || question, categories));
     }
     return out;
+  }
+
+  private makeRow(id: string, title: string, link: string, question: string, answer: string, categories: string[]): QaRow {
+    const normTitle = this.normalize(title);
+    const normQuestion = this.normalize(question);
+    const normAnswer = this.normalize(answer).slice(0, 6000);
+    const normAll = `${normTitle} ${normQuestion} ${normAnswer}`.trim();
+    return {
+      id,
+      title,
+      link,
+      question,
+      answer,
+      categories,
+      searchText: `${title} ${question} ${answer}`,
+      normTitle,
+      normQuestion,
+      normAnswer,
+      normAll,
+      tokenSet: new Set(normAll.split(/\s+/).filter((t) => t.length > 1)),
+    };
   }
 
   private loadClassificationFile(file: string): ClassificationRow[] {

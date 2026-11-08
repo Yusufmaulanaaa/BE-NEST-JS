@@ -57,7 +57,13 @@ export class ChatService {
         similarity: Number(qa.score.toFixed(3)),
         link: qa.link,
         question: qa.question,
-        status: this.legalQa.getStatus(),
+        title: qa.hits?.[0]?.row?.title ?? null,
+        status: {
+          ready: this.legalQa.getStatus().ready,
+          primary: this.legalQa.getStatus().primary,
+          qaRows: this.legalQa.getStatus().qaRows,
+          classificationRows: this.legalQa.getStatus().classificationRows,
+        },
       },
     };
   }
