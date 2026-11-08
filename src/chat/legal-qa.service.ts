@@ -256,9 +256,10 @@ export class LegalQaService implements OnModuleInit {
   private categorySteps(category: string): string {
     const c = (category || '').toLowerCase();
     if (c.includes('penganiayaan')) return 'Langkah umum (pidana penganiayaan): 1) Utamakan keselamatan & berobat/visum jika ada luka. 2) Kumpulkan bukti (foto luka, kronologi, identitas saksi/pelaku, CCTV). 3) Lapor ke kepolisian (SPKT) dengan bukti. 4) Konsultasi advokat/posbakum untuk pendampingan.';
-    if (c.includes('penipuan') || c.includes('penggelapan')) return 'Langkah umum (penipuan/penggelapan): 1) Kumpulkan bukti (chat, bukti transfer, invoice, identitas/akun pelaku, kronologi). 2) Lapor ke kepolisian/cyber crime bila elektronik. 3) Hubungi bank/platform untuk pembekuan/penelusuran sesuai ketentuan. 4) Konsultasi advokat bila kerugian besar.';
-    if (c.includes('pencurian')) return 'Langkah umum (pencurian): 1) Amankan lokasi & bukti (CCTV, saksi, daftar barang). 2) Segera lapor polisi dengan identitas dan kronologi. 3) Simpan bukti kepemilikan bila ada. 4) Konsultasi advokat bila diperlukan.';
+    if (c.includes('penipuan') || c.includes('penggelapan')) return 'Langkah umum (penipuan/penggelapan): 1) Kumpulkan bukti (chat, bukti transfer, invoice/rekam jejak, identitas/akun pelaku, kronologi). 2) Lapor ke kepolisian/cyber crime bila elektronik. 3) Hubungi bank/platform untuk pembekuan/penelusuran sesuai ketentuan. 4) Konsultasi advokat bila kerugian besar.';
+    if (c.includes('pencurian')) return 'Langkah umum (pencurian): 1) Amankan lokasi & bukti (CCTV, saksi, daftar barang, STNK/bukti kepemilikan). 2) Segera lapor polisi dengan identitas dan kronologi. 3) Simpan bukti kepemilikan bila ada. 4) Konsultasi advokat bila diperlukan.';
     if (c.includes('pencemaran')) return 'Langkah umum (pencemaran nama baik/fitnah): 1) Simpan bukti (tangkapan layar, tautan, waktu, akun). 2) Hindari menyebarluaskan balik. 3) Pertimbangkan somasi/laporan sesuai UU ITE/KUHP dengan bantuan advokat. 4) Konsultasi advokat untuk menilai unsur pidana/perdata.';
+    if (c.includes('pelecehan') || c.includes('seksual')) return 'Langkah umum (pelecehan/kekerasan seksual): 1) Utamakan keselamatan diri; cari dukungan tepercaya. 2) Simpan bukti (chat/pesan, saksi, rekaman sesuai hukum, kronologi). 3) Bila ada cedera/kejadian baru, pertimbangkan visum/pertolongan medis. 4) Lapor ke kepolisian/UPPA atau layanan pengaduan yang relevan; konsultasi advokat/pendamping hukum. (Konteks UU TPKS/KUHP dapat relevan tergantung fakta.)';
     return 'Langkah umum: 1) Tulis kronologi jelas (waktu, tempat, pihak). 2) Kumpulkan bukti/saksi. 3) Lapor pihak berwenang bila ada dugaan pidana. 4) Konsultasi advokat HukumIn untuk langkah tepat.';
   }
 
@@ -373,6 +374,7 @@ export class LegalQaService implements OnModuleInit {
       // Intent-aware topical boosts (lebih spesifik ke maksud pertanyaan umum user).
       const has = (re: RegExp) => re.test(queryNorm);
       const rowHas = (re: RegExp) => re.test(row.normTitle) || re.test(row.normQuestion);
+      const rowHasAll = (re: RegExp) => re.test(row.normTitle) || re.test(row.normQuestion) || re.test(row.normAnswer);
       if (has(/marketplace|transfer|tertipu|penipuan/) && (has(/online|marketplace|transfer/) || rowHas(/penipuan.*online|jual beli.*online|pasal penipuan online|tertipu/))) {
         if (rowHas(/pasal penipuan.*online|menjerat pelaku/)) boost += 0.95;
         if (rowHas(/panduan.*melaporkan penipuan.*online|melaporkan penipuan.*online/)) boost += 0.9;
@@ -390,9 +392,10 @@ export class LegalQaService implements OnModuleInit {
       }
       if (has(/pelecehan seksual|tindak pidana seksual|kekerasan seksual/)) {
         if (rowHas(/pelecehan seksual|tindak pidana kekerasan seksual|kekerasan seksual|uu tpks/)) boost += 1.15;
-        if (has(/kerja|tempat kerja/) && rowHas(/kerja|tempat kerja|perusahaan|karyawan|atasan/)) boost += 0.45;
-        if (has(/kerja|tempat kerja/) && rowHas(/spill.*identitas|medsos|media sosial/) && !rowHas(/kerja|tempat kerja/)) boost -= 0.35;
-        if (has(/kerja|tempat kerja/) && rowHas(/kereta api/) && !rowHas(/kerja|tempat kerja/)) boost -= 0.25;
+        if (rowHasAll(/pelecehan seksual|kekerasan seksual/) && !rowHas(/pelecehan seksual|kekerasan seksual/)) boost += 0.25;
+        if (has(/kerja|tempat kerja/) && rowHasAll(/kerja|tempat kerja|perusahaan|karyawan|atasan|kantor/)) boost += 0.5;
+        if (has(/kerja|tempat kerja/) && rowHas(/kereta api/) && !rowHasAll(/kerja|tempat kerja/)) boost -= 0.35;
+        if (has(/kerja|tempat kerja/) && rowHas(/spill.*identitas|medsos/) && !rowHasAll(/kerja|tempat kerja/)) boost -= 0.25;
       }
 
       // Bonus kategori prediksi (soft, bukan hard filter) + penalti mismatch halus.
