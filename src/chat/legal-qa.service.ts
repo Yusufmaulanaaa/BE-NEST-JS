@@ -228,14 +228,28 @@ export class LegalQaService implements OnModuleInit {
     }
 
       const answer = this.trimAnswer(best.row.answer, this.answerMaxChars);
-    const rowCategory = best.row.categories[0] ?? category ?? '-';
-    const reply =
-      'Kategori: ' + rowCategory + '\n\n' +
-      'Pertanyaan terkait:\n' + (best.row.title ? best.row.title + '\n' : '') + best.row.question + '\n\n' +
-      'Jawaban (berdasarkan dataset HukumIn):\n' + answer + '\n\n' +
-      'Sumber: ' + (best.row.link || '-') + '\n' +
-      'Skor kemiripan: ' + best.score.toFixed(3) + '\n\n' +
-      'Catatan: Jawaban ini diambil dari dataset Legal QA HukumIn (543 QA + 500 klasifikasi) berdasarkan kemiripan pertanyaan/laporan Anda. Informasi ini bersifat umum, bukan pengganti nasihat advokat.';
+    const rowCategory = this.normalizeCategory(best.row.categories[0] ?? category ?? '-');
+    const refQ = this.cleanRefText(best.row.question);
+    const refTitle = this.cleanRefText(best.row.title);
+    const refBlock = [refTitle, refQ].filter(Boolean).join('\n');
+    const steps = this.categorySteps(rowCategory);
+    const reply = [
+      `Kategori: ${rowCategory}`,
+      '',
+      'Ringkasan jawaban:',
+      this.cleanAnswer(answer, 900),
+      '',
+      'Langkah yang bisa dilakukan:',
+      steps,
+      '',
+      'Referensi dataset:',
+      refBlock || '-',
+      best.row.link ? `Sumber: ${best.row.link}` : '',
+      '',
+      'Catatan: Jawaban diambil dari dataset HukumIn (543 QA + 500 klasifikasi) berdasarkan kemiripan kasus. Ini informasi umum, bukan nasihat hukum resmi.',
+    ]
+      .filter((l, i, a) => !(l === '' && a[i - 1] === ''))
+      .join('\n');
     return { reply, intent, category: rowCategory, score: best.score, link: best.row.link || null, question: best.row.question, hits };
   }
 
@@ -261,6 +275,35 @@ export class LegalQaService implements OnModuleInit {
     if (c.includes('pencemaran')) return 'Langkah umum (pencemaran nama baik/fitnah): 1) Simpan bukti (tangkapan layar, tautan, waktu, akun). 2) Hindari menyebarluaskan balik. 3) Pertimbangkan somasi/laporan sesuai UU ITE/KUHP dengan bantuan advokat. 4) Konsultasi advokat untuk menilai unsur pidana/perdata.';
     if (c.includes('pelecehan') || c.includes('seksual')) return 'Langkah umum (pelecehan/kekerasan seksual): 1) Utamakan keselamatan diri; cari dukungan tepercaya. 2) Simpan bukti (chat/pesan, saksi, rekaman sesuai hukum, kronologi). 3) Bila ada cedera/kejadian baru, pertimbangkan visum/pertolongan medis. 4) Lapor ke kepolisian/UPPA atau layanan pengaduan yang relevan; konsultasi advokat/pendamping hukum. (Konteks UU TPKS/KUHP dapat relevan tergantung fakta.)';
     return 'Langkah umum: 1) Tulis kronologi jelas (waktu, tempat, pihak). 2) Kumpulkan bukti/saksi. 3) Lapor pihak berwenang bila ada dugaan pidana. 4) Konsultasi advokat HukumIn untuk langkah tepat.';
+  }
+
+  private normalizeCategory(raw: string): string {
+    const t = (raw || '').trim().toLowerCase();
+    if (!t) return '-';
+    if (t.includes('tipu') || t.includes('gelap') || t.includes('penipuan') || t.includes('penggelapan')) return 'Penipuan dan Penggelapan';
+    if (t.includes('curi') || t.includes('pencurian')) return 'Pencurian';
+    if (t.includes('aniaya') || t.includes('penganiayaan') || t.includes('kekerasan fisik')) return 'Penganiayaan';
+    if (t.includes('cema') || t.includes('fitnah') || t.includes('pencemaran')) return 'Pencemaran Nama Baik';
+    if (t.includes('seksual') || t.includes('pelecehan') || t.includes('tpks')) return 'Pelecehan/Kekerasan Seksual';
+    return raw.trim().replace(/\s+/g, ' ');
+  }
+
+  private cleanRefText(v: string): string {
+    return (v || '').replace(/\s+/g, ' ').trim().slice(0, 220);
+  }
+
+  private cleanAnswer(v: string, max: number): string {
+    let t = (v || '').replace(/\r\n?/g, '\n').replace(/\u00a0/g, ' ');
+    t = t
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '$1')
+      .replace(/^#{1,6}\s*/gm, '')
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/\*([^*\n]+)\*/g, '$1')
+      .replace(/_{1,2}([^_\n]+)_{1,2}/g, '$1')
+      .replace(/[ \t]+\n/g, '\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+    return this.trimAnswer(t, max);
   }
 
   /** Konteks ringkas untuk AI eksternal (3 hit teratas). */
